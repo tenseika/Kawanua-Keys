@@ -46,15 +46,10 @@ public class GameManager : MonoBehaviour
     public float hpPerNormal = -3f;
     public float hpPerMiss = -10f;
 
-    public Slider healthSlider;          // drag Health Slider UI here
-    public Image healthFill;             // drag the Fill image of the slider here
+    public TMP_Text hpText;               // drag HP TMP Text UI here
+    public HeartIndicator heartIndicator; // drag HeartIndicator component here
     public GameObject gameOverScreen;    // drag Game Over UI panel here
     public TMP_Text gameOverScoreText;   // drag a TMP text for score on game over screen
-
-    // Threshold warna HP bar
-    private readonly Color colorNormal  = new Color(0.27f, 0.85f, 0.40f); // hijau
-    private readonly Color colorWarning = new Color(1.00f, 0.80f, 0.10f); // kuning
-    private readonly Color colorDanger  = new Color(0.90f, 0.25f, 0.25f); // merah
 
     [HideInInspector] public bool isGameOver = false;
 
@@ -67,13 +62,8 @@ public class GameManager : MonoBehaviour
 
         // totalNotes = FindObjectsOfType<NoteObject>().Length; pindah ke function StartSong
 
-        // Inisialisasi health bar
-        if (healthSlider != null)
-        {
-            healthSlider.maxValue = maxHP;
-            healthSlider.value    = currentHP;
-        }
-        UpdateHealthBarColor();
+        // Inisialisasi HP text
+        UpdateHPDisplay();
     }
 
     void Update()
@@ -198,7 +188,7 @@ public class GameManager : MonoBehaviour
     }
 
     // -------------------------------------------------------------------------
-    // Health Bar
+    // Health
     // -------------------------------------------------------------------------
     void ModifyHP(float amount)
     {
@@ -206,27 +196,35 @@ public class GameManager : MonoBehaviour
 
         currentHP = Mathf.Clamp(currentHP + amount, 0f, maxHP);
 
-        if (healthSlider != null)
-            healthSlider.value = currentHP;
-
-        UpdateHealthBarColor();
+        UpdateHPDisplay(amount > 0f);
 
         if (currentHP <= 0f)
             TriggerGameOver();
     }
 
-    void UpdateHealthBarColor()
+    void UpdateHPDisplay(bool isGain = false)
     {
-        if (healthFill == null) return;
-
         float ratio = currentHP / maxHP;
 
-        if (ratio > 0.6f)
-            healthFill.color = colorNormal;
-        else if (ratio > 0.3f)
-            healthFill.color = colorWarning;
-        else
-            healthFill.color = colorDanger;
+        // Update teks — ambil warna dari HeartIndicator supaya cukup set di 1 Inspector
+        if (hpText != null)
+        {
+            hpText.text = Mathf.CeilToInt(currentHP).ToString();
+
+            if (heartIndicator != null)
+            {
+                if (ratio > 0.6f)
+                    hpText.color = heartIndicator.colorNormal;
+                else if (ratio > 0.3f)
+                    hpText.color = heartIndicator.colorWarning;
+                else
+                    hpText.color = heartIndicator.colorDanger;
+            }
+        }
+
+        // Update heart icon
+        if (heartIndicator != null)
+            heartIndicator.OnHPChanged(currentHP, maxHP, isGain);
     }
 
     void TriggerGameOver()
@@ -241,7 +239,7 @@ public class GameManager : MonoBehaviour
             gameOverScreen.SetActive(true);
 
             if (gameOverScoreText != null)
-                gameOverScoreText.text = "Skor: " + currentScore.ToString();
+                gameOverScoreText.text = currentScore.ToString();
         }
     }
 
