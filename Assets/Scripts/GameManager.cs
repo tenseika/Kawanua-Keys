@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text countdownText; // drag a TMP text object here in Inspector
 
     public GameObject resultsScreen;
-    public Text percentHitText, normalsText, goodsText, perfectsText, missesText, rankText, finalScoreText;
+    public TMP_Text percentHitText, rankText, finalScoreText;
 
     void Start()
     {
@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Skor: 0";
         currentMultiplier = 1;
 
-        totalNotes = FindObjectsOfType<NoteObject>().Length;
+        // totalNotes = FindObjectsOfType<NoteObject>().Length; pindah ke function StartSong
     }
 
     void Update()
@@ -63,31 +63,29 @@ public class GameManager : MonoBehaviour
             {
                 resultsScreen.SetActive(true);
 
-                normalsText.text = "" + normalHits;
-                goodsText.text = goodHits.ToString();
-                perfectsText.text = perfectHits.ToString();
-                missesText.text = "" + missedHits;
-
-                float totalHit = normalHits + goodHits + perfectHits;
-                float percentHit = (totalHit / totalNotes) * 100f;
+                // Weighted accuracy system:
+                // Perfect = 100pts, Good = 75pts, Normal = 50pts, Miss = -25pts
+                float weightedScore = (perfectHits * 100f) + (goodHits * 75f) + (normalHits * 50f) + (missedHits * -25f);
+                float maxPossibleScore = totalNotes * 100f;
+                float percentHit = Mathf.Clamp((weightedScore / maxPossibleScore) * 100f, 0f, 100f);
 
                 percentHitText.text = percentHit.ToString("F1") + "%";
 
                 string rankVal = "F";
 
-                if (percentHit > 40)
+                if (percentHit >= 40f)
                 {
                     rankVal = "D";
-                    if (percentHit > 55)
+                    if (percentHit >= 55f)
                     {
                         rankVal = "C";
-                        if (percentHit > 70)
+                        if (percentHit >= 70f)
                         {
                             rankVal = "B";
-                            if (percentHit > 85)
+                            if (percentHit >= 85f)
                             {
                                 rankVal = "A";
-                                if (percentHit > 95)
+                                if (percentHit >= 95f)
                                 {
                                     rankVal = "S";
                                 }
@@ -109,6 +107,7 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         // Notes now position themselves via audio time — nothing else needed here
+        totalNotes = FindObjectsOfType<NoteObject>().Length;
     }
 
     public void NoteHit()
