@@ -67,7 +67,10 @@ public class NoteObject : MonoBehaviour
         if (other.tag == "Activator" && gameObject.activeSelf)
         {
             canBePressed = false;
-            GameManager.instance.NoteMissed();
+
+            // Jangan proses miss jika game sudah over
+            if (!GameManager.instance.isGameOver)
+                GameManager.instance.NoteMissed();
         }
     }
 }

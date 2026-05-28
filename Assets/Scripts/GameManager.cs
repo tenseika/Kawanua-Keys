@@ -31,11 +31,32 @@ public class GameManager : MonoBehaviour
     public float missedHits;
 
     public bool isPaused;
-    public GameObject pauseScreen; // drag your pause UI panel here in Inspector
-    public TMP_Text countdownText; // drag a TMP text object here in Inspector
+    public GameObject pauseScreen;
+    public TMP_Text countdownText;
 
     public GameObject resultsScreen;
     public TMP_Text percentHitText, rankText, finalScoreText;
+
+    [Header("Health Bar")]
+    public float maxHP = 100f;
+    public float currentHP = 70f;
+
+    public float hpPerPerfect = 3f;
+    public float hpPerGood = 1f;
+    public float hpPerNormal = -3f;
+    public float hpPerMiss = -10f;
+
+    public Slider healthSlider;          // drag Health Slider UI here
+    public Image healthFill;             // drag the Fill image of the slider here
+    public GameObject gameOverScreen;    // drag Game Over UI panel here
+    public TMP_Text gameOverScoreText;   // drag a TMP text for score on game over screen
+
+    // Threshold warna HP bar
+    private readonly Color colorNormal  = new Color(0.27f, 0.85f, 0.40f); // hijau
+    private readonly Color colorWarning = new Color(1.00f, 0.80f, 0.10f); // kuning
+    private readonly Color colorDanger  = new Color(0.90f, 0.25f, 0.25f); // merah
+
+    [HideInInspector] public bool isGameOver = false;
 
     void Start()
     {
@@ -45,10 +66,20 @@ public class GameManager : MonoBehaviour
         currentMultiplier = 1;
 
         // totalNotes = FindObjectsOfType<NoteObject>().Length; pindah ke function StartSong
+
+        // Inisialisasi health bar
+        if (healthSlider != null)
+        {
+            healthSlider.maxValue = maxHP;
+            healthSlider.value    = currentHP;
+        }
+        UpdateHealthBarColor();
     }
 
     void Update()
     {
+        if (isGameOver) return;
+
         if (!startPlaying)
         {
             if (Input.anyKeyDown)
@@ -134,6 +165,7 @@ public class GameManager : MonoBehaviour
         currentScore += scorePerNote * currentMultiplier;
         NoteHit();
         normalHits++;
+        ModifyHP(hpPerNormal);
     }
 
     public void GoodHit()
@@ -141,6 +173,7 @@ public class GameManager : MonoBehaviour
         currentScore += scorePerGoodNote * currentMultiplier;
         NoteHit();
         goodHits++;
+        ModifyHP(hpPerGood);
     }
 
     public void PerfectHit()
@@ -148,6 +181,7 @@ public class GameManager : MonoBehaviour
         currentScore += scorePerPerfectNote * currentMultiplier;
         NoteHit();
         perfectHits++;
+        ModifyHP(hpPerPerfect);
     }
 
     public void NoteMissed()
@@ -159,6 +193,56 @@ public class GameManager : MonoBehaviour
 
         multiText.text = "x" + currentMultiplier;
         missedHits++;
+
+        ModifyHP(hpPerMiss);
+    }
+
+    // -------------------------------------------------------------------------
+    // Health Bar
+    // -------------------------------------------------------------------------
+    void ModifyHP(float amount)
+    {
+        if (isGameOver) return;
+
+        currentHP = Mathf.Clamp(currentHP + amount, 0f, maxHP);
+
+        if (healthSlider != null)
+            healthSlider.value = currentHP;
+
+        UpdateHealthBarColor();
+
+        if (currentHP <= 0f)
+            TriggerGameOver();
+    }
+
+    void UpdateHealthBarColor()
+    {
+        if (healthFill == null) return;
+
+        float ratio = currentHP / maxHP;
+
+        if (ratio > 0.6f)
+            healthFill.color = colorNormal;
+        else if (ratio > 0.3f)
+            healthFill.color = colorWarning;
+        else
+            healthFill.color = colorDanger;
+    }
+
+    void TriggerGameOver()
+    {
+        if (isGameOver) return;
+        isGameOver = true;
+
+        theMusic.Stop();
+
+        if (gameOverScreen != null)
+        {
+            gameOverScreen.SetActive(true);
+
+            if (gameOverScoreText != null)
+                gameOverScoreText.text = "Skor: " + currentScore.ToString();
+        }
     }
 
     public void Pause()
