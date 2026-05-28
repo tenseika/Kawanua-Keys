@@ -46,9 +46,8 @@ public class GameManager : MonoBehaviour
     public float hpPerNormal = -3f;
     public float hpPerMiss = -10f;
 
-    public TMP_Text hpText;               // drag HP TMP Text UI here
-    public HeartIndicator heartIndicator; // drag HeartIndicator component here
-    public GameObject gameOverScreen;    // drag Game Over UI panel here
+    public TMP_Text hpText;              // drag HP TMP Text UI here
+    public GameObject gameOverScreen;   // drag Game Over UI panel here
     public TMP_Text gameOverScoreText;   // drag a TMP text for score on game over screen
 
     [HideInInspector] public bool isGameOver = false;
@@ -196,7 +195,7 @@ public class GameManager : MonoBehaviour
 
         currentHP = Mathf.Clamp(currentHP + amount, 0f, maxHP);
 
-        UpdateHPDisplay(amount > 0f);
+        UpdateHPDisplay();
 
         if (currentHP <= 0f)
             TriggerGameOver();
@@ -204,27 +203,18 @@ public class GameManager : MonoBehaviour
 
     void UpdateHPDisplay(bool isGain = false)
     {
+        if (hpText == null) return;
+
         float ratio = currentHP / maxHP;
 
-        // Update teks — ambil warna dari HeartIndicator supaya cukup set di 1 Inspector
-        if (hpText != null)
-        {
-            hpText.text = Mathf.CeilToInt(currentHP).ToString();
+        hpText.text = Mathf.CeilToInt(currentHP).ToString();
 
-            if (heartIndicator != null)
-            {
-                if (ratio > 0.6f)
-                    hpText.color = heartIndicator.colorNormal;
-                else if (ratio > 0.3f)
-                    hpText.color = heartIndicator.colorWarning;
-                else
-                    hpText.color = heartIndicator.colorDanger;
-            }
-        }
-
-        // Update heart icon
-        if (heartIndicator != null)
-            heartIndicator.OnHPChanged(currentHP, maxHP, isGain);
+        if (ratio > 0.6f)
+            hpText.color = new Color(0.27f, 0.85f, 0.40f); // hijau
+        else if (ratio > 0.3f)
+            hpText.color = new Color(1.00f, 0.80f, 0.10f); // kuning
+        else
+            hpText.color = new Color(0.90f, 0.25f, 0.25f); // merah
     }
 
     void TriggerGameOver()
