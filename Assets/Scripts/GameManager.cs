@@ -47,8 +47,14 @@ public class GameManager : MonoBehaviour
     public float hpPerMiss = -10f;
 
     public TMP_Text hpText;              // drag HP TMP Text UI here
+    public Image heartImage;
     public GameObject gameOverScreen;   // drag Game Over UI panel here
     public TMP_Text gameOverScoreText;   // drag a TMP text for score on game over screen
+
+    // Warna HP — atur bebas di Inspector
+    public Color hpColorHigh   = new Color(0.27f, 0.85f, 0.40f);  // hijau  (> 60%)
+    public Color hpColorMedium = new Color(1.00f, 0.80f, 0.10f);  // kuning (30–60%)
+    public Color hpColorLow    = new Color(0.90f, 0.25f, 0.25f);  // merah  (< 30%)
 
     [HideInInspector] public bool isGameOver = false;
 
@@ -209,12 +215,19 @@ public class GameManager : MonoBehaviour
 
         hpText.text = Mathf.CeilToInt(currentHP).ToString();
 
+        Color hpColor;
+
         if (ratio > 0.6f)
-            hpText.color = new Color(0.27f, 0.85f, 0.40f); // hijau
+            hpColor = hpColorHigh;
         else if (ratio > 0.3f)
-            hpText.color = new Color(1.00f, 0.80f, 0.10f); // kuning
+            hpColor = hpColorMedium;
         else
-            hpText.color = new Color(0.90f, 0.25f, 0.25f); // merah
+            hpColor = hpColorLow;
+
+        hpText.color = hpColor;
+
+        if (heartImage != null)
+            heartImage.color = hpColor;   // ← sync warna ke sprite hati
     }
 
     void TriggerGameOver()
