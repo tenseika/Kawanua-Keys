@@ -46,10 +46,10 @@ public class GameManager : MonoBehaviour
     public float hpPerNormal = -3f;
     public float hpPerMiss = -10f;
 
-    public TMP_Text hpText;              // drag HP TMP Text UI here
+    public TMP_Text hpText;             // drag HP TMP Text UI here
     public Image heartImage;
     public GameObject gameOverScreen;   // drag Game Over UI panel here
-    public TMP_Text gameOverScoreText;   // drag a TMP text for score on game over screen
+    public TMP_Text gameOverScoreText;  // drag a TMP text for score on game over screen
 
     // Warna HP — atur bebas di Inspector
     public Color hpColorHigh   = new Color(0.27f, 0.85f, 0.40f);  // hijau  (> 60%)
@@ -58,14 +58,22 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public bool isGameOver = false;
 
+    // -------------------------------------------------------------------------
+    // Song Identity — isi di Inspector tiap scene lagu
+    // Contoh: "song1", "song2", "song3", "song4"
+    // -------------------------------------------------------------------------
+    [Header("Song Record")]
+    public string songID;
+
+    // Flag agar SaveRecord hanya dipanggil sekali per sesi
+    private bool recordSaved = false;
+
     void Start()
     {
         instance = this;
 
         scoreText.text = "Skor: 0";
         currentMultiplier = 1;
-
-        // totalNotes = FindObjectsOfType<NoteObject>().Length; pindah ke function StartSong
 
         // Inisialisasi HP text
         UpdateHPDisplay();
@@ -91,9 +99,9 @@ public class GameManager : MonoBehaviour
 
                 // Weighted accuracy system:
                 // Perfect = 100pts, Good = 75pts, Normal = 50pts, Miss = -25pts
-                float weightedScore = (perfectHits * 100f) + (goodHits * 75f) + (normalHits * 50f) + (missedHits * -25f);
+                float weightedScore    = (perfectHits * 100f) + (goodHits * 75f) + (normalHits * 50f) + (missedHits * -25f);
                 float maxPossibleScore = totalNotes * 100f;
-                float percentHit = Mathf.Clamp((weightedScore / maxPossibleScore) * 100f, 0f, 100f);
+                float percentHit       = Mathf.Clamp((weightedScore / maxPossibleScore) * 100f, 0f, 100f);
 
                 percentHitText.text = percentHit.ToString("F1") + "%";
 
@@ -120,8 +128,15 @@ public class GameManager : MonoBehaviour
                     }
                 }
 
-                rankText.text = rankVal;
+                rankText.text       = rankVal;
                 finalScoreText.text = currentScore.ToString();
+
+                // Simpan rekor — hanya sekali per sesi
+                if (!recordSaved)
+                {
+                    SaveRecord(percentHit, rankVal, currentScore);
+                    recordSaved = true;
+                }
             }
         }
     }
@@ -227,7 +242,7 @@ public class GameManager : MonoBehaviour
         hpText.color = hpColor;
 
         if (heartImage != null)
-            heartImage.color = hpColor;   // ← sync warna ke sprite hati
+            heartImage.color = hpColor;  // sync warna ke sprite hati
     }
 
     void TriggerGameOver()
@@ -275,5 +290,48 @@ public class GameManager : MonoBehaviour
         countdownText.gameObject.SetActive(false);
         isPaused = false;
         theMusic.UnPause();
+    }
+
+    // -------------------------------------------------------------------------
+    // Record Saving
+    // -------------------------------------------------------------------------
+    void SaveRecord(float accuracy, string rank, int score)
+    {
+        if (string.IsNullOrEmpty(songID))
+        {
+            Debug.LogWarning("GameManager: songID belum diisi! Rekor tidak disimpan.");
+            return;
+        }
+
+        string accKey   = songID + "_accuracy";
+        string rankKey  = songID + "_rank";
+        string scoreKey = songID + "_score";
+
+        // Simpan akurasi tertinggi
+        float savedAcc = PlayerPrefs.GetFloat(accKey, -1f);
+        if (accuracy > savedAcc)
+            PlayerPrefs.SetFloat(accKey, accuracy);
+
+        // Simpan rank tertinggi (S > A > B > C > D > F)
+        string savedRank = PlayerPrefs.GetString(rankKey, "");
+        if (IsHigherRank(rank, savedRank))
+            PlayerPrefs.SetString(rankKey, rank);
+
+        // Simpan skor tertinggi
+        int savedScore = PlayerPrefs.GetInt(scoreKey, 0);
+        if (score > savedScore)
+            PlayerPrefs.SetInt(scoreKey, score);
+
+        PlayerPrefs.Save();
+
+        Debug.Log($"[Record Saved] {songID} | Accuracy: {accuracy:F1}% | Rank: {rank} | Score: {score}");
+    }
+
+    bool IsHigherRank(string newRank, string oldRank)
+    {
+        string[] order = { "F", "D", "C", "B", "A", "S" };
+        int newIndex = System.Array.IndexOf(order, newRank);
+        int oldIndex = System.Array.IndexOf(order, oldRank);
+        return newIndex > oldIndex;
     }
 }

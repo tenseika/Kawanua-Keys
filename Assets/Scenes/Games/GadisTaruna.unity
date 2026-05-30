@@ -12647,6 +12647,7 @@ MonoBehaviour:
   hpColorMedium: {r: 0.7607843, g: 0.57254905, b: 0, a: 1}
   hpColorLow: {r: 0.54509807, g: 0, b: 0, a: 1}
   isGameOver: 0
+  songID: song2
 --- !u!1 &963802999
 GameObject:
   m_ObjectHideFlags: 0
