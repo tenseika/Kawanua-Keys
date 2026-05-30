@@ -9,17 +9,17 @@ public class NoteObject : MonoBehaviour
     public KeyCode keyToPress;
 
     public GameObject hitEffect, goodEffect, perfectEffect, missEffect;
+    public GameObject hitTextEffect, goodTextEffect, perfectTextEffect;
 
-    public Transform hitZone; // drag your Activator object here in Inspector
+    public Transform hitZone;
 
-    [HideInInspector] public float beatTime;    // assigned by NoteSpawner
-    [HideInInspector] public float scrollSpeed; // assigned by NoteSpawner
+    [HideInInspector] public float beatTime;
+    [HideInInspector] public float scrollSpeed;
 
     void Update()
     {
-        if (GameManager.instance.isPaused) return; // add this line
-        
-        // Position note so it arrives exactly at hitZone.y on beat
+        if (GameManager.instance.isPaused) return;
+
         float timeUntilBeat = beatTime - GameManager.instance.theMusic.time;
         transform.position = new Vector3(transform.position.x, hitZone.position.y + timeUntilBeat * scrollSpeed, 0f);
 
@@ -29,7 +29,6 @@ public class NoteObject : MonoBehaviour
             {
                 gameObject.SetActive(false);
 
-                // Judge hit quality based on distance from the hit zone center
                 float distanceFromHitZone = Mathf.Abs(transform.position.y - hitZone.position.y);
 
                 if (distanceFromHitZone > 0.25f)
@@ -37,18 +36,21 @@ public class NoteObject : MonoBehaviour
                     Debug.Log("Hit");
                     GameManager.instance.NormalHit();
                     Instantiate(hitEffect, transform.position, hitEffect.transform.rotation);
+                    Instantiate(hitTextEffect, transform.position, Quaternion.identity);
                 }
                 else if (distanceFromHitZone > 0.05f)
                 {
                     Debug.Log("Good");
                     GameManager.instance.GoodHit();
                     Instantiate(goodEffect, transform.position, goodEffect.transform.rotation);
+                    Instantiate(goodTextEffect, transform.position, Quaternion.identity);
                 }
                 else
                 {
                     Debug.Log("Perfect");
                     GameManager.instance.PerfectHit();
                     Instantiate(perfectEffect, transform.position, perfectEffect.transform.rotation);
+                    Instantiate(perfectTextEffect, transform.position, Quaternion.identity);
                 }
             }
         }
@@ -68,9 +70,13 @@ public class NoteObject : MonoBehaviour
         {
             canBePressed = false;
 
-            // Jangan proses miss jika game sudah over
             if (!GameManager.instance.isGameOver)
+            {
                 GameManager.instance.NoteMissed();
+
+                if (missEffect != null)
+                    Instantiate(missEffect, hitZone.position, missEffect.transform.rotation);
+            }
         }
     }
 }

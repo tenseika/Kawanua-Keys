@@ -97,4 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1359f08024d95ba47af34f6d86ee00ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 1
+  effectType: 0
+  rings: []
+  sparks: []
+  dots: []
+  xSprite: {fileID: 0}
+  screenFlash: {fileID: 0}
+  duration: 0.45

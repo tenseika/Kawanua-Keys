@@ -103,7 +103,10 @@ MonoBehaviour:
   hitEffect: {fileID: 7651219274749546109, guid: b9cecbb1152a9c04ebc8f75ec8ed575d, type: 3}
   goodEffect: {fileID: 4118248123923931321, guid: b11577ea5b5ba994dac665b329d0113b, type: 3}
   perfectEffect: {fileID: 4695725550251798189, guid: f5b3c3f424cc78a47abae31a73c00322, type: 3}
-  missEffect: {fileID: 8768930312799256369, guid: 49975aec128d2fb41a6d4db0d43b8682, type: 3}
+  missEffect: {fileID: 0}
+  hitTextEffect: {fileID: 4134800543502047048, guid: 5c3cce7ff6685e744bb78cb635524fb1, type: 3}
+  goodTextEffect: {fileID: 208551655195297793, guid: 473a180a871161d4ea5d3116bf629835, type: 3}
+  perfectTextEffect: {fileID: 8010493533178933472, guid: 11bcdbac442ad674bbd08c5fbe84e876, type: 3}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0

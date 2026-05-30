@@ -1919,6 +1919,10 @@ MonoBehaviour:
     accuracyText: {fileID: 2065108049}
     rankText: {fileID: 1647625794}
     scoreText: {fileID: 1772986208}
+  - songID: song1
+    accuracyText: {fileID: 2123959041}
+    rankText: {fileID: 1026491417}
+    scoreText: {fileID: 2076917177}
   avgAccuracyText: {fileID: 2045629238}
   avgRankText: {fileID: 1542029117}
 --- !u!4 &934952968
