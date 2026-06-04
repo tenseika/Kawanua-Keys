@@ -8,7 +8,7 @@ public class NoteObject : MonoBehaviour
 
     public KeyCode keyToPress;
 
-    public GameObject hitEffect, goodEffect, perfectEffect, missEffect;
+    public GameObject hitEffect, goodEffect, perfectEffect;
     public GameObject hitTextEffect, goodTextEffect, perfectTextEffect;
 
     public Transform hitZone;
@@ -73,9 +73,6 @@ public class NoteObject : MonoBehaviour
             if (!GameManager.instance.isGameOver)
             {
                 GameManager.instance.NoteMissed();
-
-                if (missEffect != null)
-                    Instantiate(missEffect, hitZone.position, missEffect.transform.rotation);
             }
         }
     }

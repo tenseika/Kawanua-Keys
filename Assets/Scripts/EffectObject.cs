@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class EffectObject : MonoBehaviour
 {
-    public enum EffectType { Hit, Good, Perfect, Miss }
+    public enum EffectType { Hit, Good, Perfect }
 
     public EffectType effectType;
 
@@ -15,15 +15,10 @@ public class EffectObject : MonoBehaviour
     // Perfect : ring1, ring2, ring3, and 8 spark lines
     // Good    : ring1, ring2
     // Hit     : ring1, and 3-4 small dot/square sprites
-    // Miss    : xSprite
 
     public SpriteRenderer[] rings;     // circle outline sprites, scaled outward
     public SpriteRenderer[] sparks;    // line sprites for Perfect burst arms
     public SpriteRenderer[] dots;      // small squares/dots for Hit scatter
-    public SpriteRenderer xSprite;     // X sprite for Miss
-
-    // Optional: assign a fullscreen UI Image for the screen flash (Miss / Perfect)
-    public UnityEngine.UI.Image screenFlash;
 
     [Header("Timing")]
     public float duration = 0.45f;
@@ -35,7 +30,6 @@ public class EffectObject : MonoBehaviour
             case EffectType.Perfect: StartCoroutine(PlayPerfect()); break;
             case EffectType.Good:    StartCoroutine(PlayGood());    break;
             case EffectType.Hit:     StartCoroutine(PlayHit());     break;
-            case EffectType.Miss:    StartCoroutine(PlayMiss());    break;
         }
 
         Destroy(gameObject, duration + 0.05f);
@@ -155,72 +149,6 @@ public class EffectObject : MonoBehaviour
 
             yield return null;
         }
-    }
-
-    // -------------------------------------------------------------------------
-    // MISS  — X sprite scales up with a punch then fades, optional red flash
-    // -------------------------------------------------------------------------
-    IEnumerator PlayMiss()
-    {
-        float elapsed = 0f;
-        float punchDuration = duration * 0.25f;   // quick scale-up punch
-        float fadeDuration  = duration * 0.75f;   // then fade out
-
-        // Screen flash
-        if (screenFlash != null)
-            StartCoroutine(ScreenFlash(new Color(0.88f, 0.29f, 0.29f, 0.35f), 0.12f));
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-
-            if (xSprite != null)
-            {
-                float scale, alpha;
-
-                if (elapsed < punchDuration)
-                {
-                    // Punch in: overshoot slightly
-                    float t = elapsed / punchDuration;
-                    scale = Mathf.Lerp(0f, 1.15f, EaseOut(t));
-                    alpha = 1f;
-                }
-                else
-                {
-                    // Settle and fade
-                    float t = (elapsed - punchDuration) / fadeDuration;
-                    scale = Mathf.Lerp(1.15f, 1.0f, t * 3f);   // quick settle
-                    scale = Mathf.Clamp(scale, 1.0f, 1.15f);
-                    alpha = Mathf.Lerp(1f, 0f, EaseIn(t));
-                }
-
-                xSprite.transform.localScale = Vector3.one * scale;
-                SetAlpha(xSprite, alpha);
-            }
-
-            yield return null;
-        }
-    }
-
-    // -------------------------------------------------------------------------
-    // Shared screen flash (used by Miss, can also be called for Perfect)
-    // -------------------------------------------------------------------------
-    IEnumerator ScreenFlash(Color flashColor, float flashDuration)
-    {
-        if (screenFlash == null) yield break;
-
-        screenFlash.color = flashColor;
-        float elapsed = 0f;
-
-        while (elapsed < flashDuration)
-        {
-            elapsed += Time.deltaTime;
-            float a = Mathf.Lerp(flashColor.a, 0f, elapsed / flashDuration);
-            screenFlash.color = new Color(flashColor.r, flashColor.g, flashColor.b, a);
-            yield return null;
-        }
-
-        screenFlash.color = Color.clear;
     }
 
     // -------------------------------------------------------------------------

@@ -51,6 +51,8 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverScreen;   // drag Game Over UI panel here
     public TMP_Text gameOverScoreText;  // drag a TMP text for score on game over screen
 
+    public TMP_Text tapToStartText;
+
     // Warna HP — atur bebas di Inspector
     public Color hpColorHigh   = new Color(0.27f, 0.85f, 0.40f);  // hijau  (> 60%)
     public Color hpColorMedium = new Color(1.00f, 0.80f, 0.10f);  // kuning (30–60%)
@@ -88,6 +90,7 @@ public class GameManager : MonoBehaviour
             if (Input.anyKeyDown)
             {
                 startPlaying = true;
+                tapToStartText.gameObject.SetActive(false); // sembunyikan teks
                 StartCoroutine(StartSong());
             }
         }
