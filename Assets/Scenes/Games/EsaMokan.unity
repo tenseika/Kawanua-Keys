@@ -12911,6 +12911,7 @@ MonoBehaviour:
   hpColorLow: {r: 0.54509807, g: 0, b: 0, a: 1}
   isGameOver: 0
   songID: song2
+  hpConfig: {fileID: 11400000, guid: 029901f1a974e44439a491b883de1f22, type: 2}
 --- !u!1 &963802999
 GameObject:
   m_ObjectHideFlags: 0
