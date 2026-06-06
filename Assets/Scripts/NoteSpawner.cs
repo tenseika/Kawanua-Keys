@@ -20,17 +20,21 @@ public class NoteSpawner : MonoBehaviour
     {
         List<float> timestamps = ParseChart(chartFile.text);
 
-        int lastLane = -1;
+        // Ganti dengan ini:
+        int prevLane1 = -1; // note tepat sebelumnya
+        int prevLane2 = -1; // note 2 langkah sebelumnya
 
         foreach (float beatTime in timestamps)
         {
+            // Ganti dengan ini:
             int randomLane;
             do
             {
                 randomLane = Random.Range(0, lanes.Length);
-            } while (randomLane == lastLane);
+            } while (randomLane == prevLane1 || randomLane == prevLane2);
 
-            lastLane = randomLane;
+            prevLane2 = prevLane1;
+            prevLane1 = randomLane;
 
             float startY = beatTime * scrollSpeed;
 
