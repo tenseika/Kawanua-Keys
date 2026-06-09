@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     public TMP_Text scoreText;
     public TMP_Text multiText;
+    public MultiplierEffect multiplierEffect;
 
     public float totalNotes;
     public float normalHits;
@@ -162,6 +163,7 @@ public class GameManager : MonoBehaviour
             {
                 multiplierTracker = 0;
                 currentMultiplier++;
+                if (multiplierEffect != null) multiplierEffect.PlayBlink();
             }
         }
 
@@ -198,6 +200,7 @@ public class GameManager : MonoBehaviour
         currentMultiplier = 1;
         multiplierTracker = 0;
         multiText.text = "x" + currentMultiplier;
+        if (multiplierEffect != null) multiplierEffect.PlayShake();
         missedHits++;
         ModifyHP(hpPerMiss);
     }
