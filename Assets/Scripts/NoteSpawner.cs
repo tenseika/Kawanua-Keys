@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System.Globalization;
 
 public class NoteSpawner : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class NoteSpawner : MonoBehaviour
             float startY = beatTime * scrollSpeed;
 
             Vector3 spawnPos = new Vector3(lanes[randomLane].position.x, startY, 0f);
+            Debug.Log($"[Spawn] BeatTime:{beatTime} StartY:{startY} ScrollSpeed:{scrollSpeed}");
 
             // Use the prefab that matches the lane index
             GameObject newNote = Instantiate(notePrefabs[randomLane], spawnPos, Quaternion.identity);
@@ -74,21 +76,20 @@ public class NoteSpawner : MonoBehaviour
 
     float ParseTimestamp(string value)
     {
-        // Format: M.SS.mmm (e.g. 1.00.024 = 1 min, 0 sec, 024 ms)
         string[] parts = value.Split('.');
 
         if (parts.Length == 3)
         {
             int minutes = int.Parse(parts[0]);
             int seconds = int.Parse(parts[1]);
-            float milliseconds = float.Parse(parts[2]) / 1000f;
+            float milliseconds = float.Parse(parts[2], CultureInfo.InvariantCulture) / 1000f;
 
             return (minutes * 60f) + seconds + milliseconds;
         }
         else
         {
-            // Plain seconds format (e.g. 4.989)
-            return float.Parse(value);
+            // Fix di sini
+            return float.Parse(value, CultureInfo.InvariantCulture);
         }
     }
 }

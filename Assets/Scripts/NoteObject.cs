@@ -9,16 +9,25 @@ public class NoteObject : MonoBehaviour
     public KeyCode keyToPress;
 
     public GameObject hitEffect, goodEffect, perfectEffect;
-    public GameObject hitTextEffect, goodTextEffect, perfectTextEffect;
+    public GameObject hitTextEffect, goodTextEffect, perfectTextEffect, missTextEffect;
 
     public Transform hitZone;
 
     [HideInInspector] public float beatTime;
     [HideInInspector] public float scrollSpeed;
 
+    private bool _logged = false;
+
     void Update()
     {
         if (GameManager.instance.isPaused) return;
+
+        // ← TARUH DI SINI
+        if (!_logged)
+        {
+            Debug.Log($"[Note] HitZone Y:{hitZone.position.y} BeatTime:{beatTime} ScrollSpeed:{scrollSpeed}");
+            _logged = true;
+        }
 
         float timeUntilBeat = beatTime - GameManager.instance.theMusic.time;
         transform.position = new Vector3(transform.position.x, hitZone.position.y + timeUntilBeat * scrollSpeed, 0f);
@@ -64,6 +73,17 @@ public class NoteObject : MonoBehaviour
         }
     }
 
+    private static bool _isQuitting = false;
+
+    void Awake() => _isQuitting = false;
+
+    void OnApplicationQuit() => _isQuitting = true;
+
+    void OnDestroy()
+    {
+        if (!gameObject.scene.isLoaded) _isQuitting = true;
+    }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Activator" && gameObject.activeSelf)
@@ -73,6 +93,8 @@ public class NoteObject : MonoBehaviour
             if (!GameManager.instance.isGameOver)
             {
                 GameManager.instance.NoteMissed();
+                if (!GameManager.instance.isGameOver && missTextEffect != null && !_isQuitting)
+                    Instantiate(missTextEffect, hitZone.position, Quaternion.identity);
             }
         }
     }

@@ -53,6 +53,13 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverScreen;
     public TMP_Text gameOverScoreText;
 
+    [Header("Game Over SFX")]
+    public AudioClip gameOverSFX;
+    public AudioSource sfxSource;
+
+    [Header("Result SFX")]
+    public AudioClip resultSFX;
+
     public TMP_Text tapToStartText;
 
     public Color hpColorHigh   = new Color(0.27f, 0.85f, 0.40f);
@@ -71,7 +78,8 @@ public class GameManager : MonoBehaviour
     [Header("HP Config (opsional)")]
     public SongHPConfig hpConfig;
 
-    private bool recordSaved = false;
+    private bool recordSaved  = false;
+    private bool resultShown  = false;
 
     void Start()
     {
@@ -135,6 +143,13 @@ public class GameManager : MonoBehaviour
 
                 rankText.text       = rankVal;
                 finalScoreText.text = currentScore.ToString();
+
+                if (!resultShown)
+                {
+                    resultShown = true;
+                    if (sfxSource != null && resultSFX != null)
+                        sfxSource.PlayOneShot(resultSFX);
+                }
 
                 if (!recordSaved)
                 {
@@ -232,6 +247,9 @@ public class GameManager : MonoBehaviour
         if (isGameOver) return;
         isGameOver = true;
         theMusic.Stop();
+
+        if (sfxSource != null && gameOverSFX != null)
+            sfxSource.PlayOneShot(gameOverSFX);
 
         if (gameOverScreen != null)
         {

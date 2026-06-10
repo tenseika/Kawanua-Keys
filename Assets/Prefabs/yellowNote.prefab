@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 291343923988909943}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: -1.53, y: 1.89, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.42334267, y: 0.42334267, z: 0.42334267}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 435017887
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 2b90c4e8b76ff2a42bacc5f214ef02f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -106,6 +106,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 4134800543502047048, guid: 5c3cce7ff6685e744bb78cb635524fb1, type: 3}
   goodTextEffect: {fileID: 208551655195297793, guid: 473a180a871161d4ea5d3116bf629835, type: 3}
   perfectTextEffect: {fileID: 8010493533178933472, guid: 11bcdbac442ad674bbd08c5fbe84e876, type: 3}
+  missTextEffect: {fileID: 5894464826480349262, guid: 2b6e732b868edf64faa2fe3da7d9d761, type: 3}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0

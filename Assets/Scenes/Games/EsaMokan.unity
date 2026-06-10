@@ -211,6 +211,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -355,6 +356,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -499,6 +501,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -643,6 +646,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -698,85 +702,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &35246222
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 35246223}
-  - component: {fileID: 35246225}
-  - component: {fileID: 35246224}
-  m_Layer: 5
-  m_Name: Title Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &35246223
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 35246222}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1294833729}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 407}
-  m_SizeDelta: {x: 459.7, y: 86.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &35246224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 35246222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 60
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Results
---- !u!222 &35246225
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 35246222}
-  m_CullTransparentMesh: 0
 --- !u!1 &36407415
 GameObject:
   m_ObjectHideFlags: 0
@@ -1075,85 +1000,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
---- !u!1 &63860933
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 63860934}
-  - component: {fileID: 63860936}
-  - component: {fileID: 63860935}
-  m_Layer: 5
-  m_Name: Missed Hits Value
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &63860934
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63860933}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1294833729}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 280, y: 53}
-  m_SizeDelta: {x: 459.7, y: 86.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &63860935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63860933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.8490566, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 60
-    m_Alignment: 3
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: XXX
---- !u!222 &63860936
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63860933}
-  m_CullTransparentMesh: 0
 --- !u!1 &66578345
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,6 +1089,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -1387,6 +1234,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -1442,85 +1290,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &102991476
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 102991477}
-  - component: {fileID: 102991479}
-  - component: {fileID: 102991478}
-  m_Layer: 5
-  m_Name: Final Score
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &102991477
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102991476}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1294833729}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -340}
-  m_SizeDelta: {x: 459.7, y: 86.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &102991478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102991476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 60
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Final Score
---- !u!222 &102991479
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102991476}
-  m_CullTransparentMesh: 0
 --- !u!1 &112006621
 GameObject:
   m_ObjectHideFlags: 0
@@ -1610,6 +1379,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -1754,6 +1524,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -1898,6 +1669,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -2042,6 +1814,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -2186,6 +1959,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -2330,6 +2104,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -2549,6 +2324,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -2604,85 +2380,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &207126473
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 207126474}
-  - component: {fileID: 207126476}
-  - component: {fileID: 207126475}
-  m_Layer: 5
-  m_Name: Perfect Hits
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &207126474
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 207126473}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1294833729}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -280, y: 118}
-  m_SizeDelta: {x: 459.7, y: 86.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &207126475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 207126473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 60
-    m_Alignment: 5
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Perfect Notes Hit
---- !u!222 &207126476
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 207126473}
-  m_CullTransparentMesh: 0
 --- !u!1 &224702563
 GameObject:
   m_ObjectHideFlags: 0
@@ -2772,6 +2469,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -2916,6 +2614,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -3060,6 +2759,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -3204,6 +2904,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -3348,6 +3049,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -3492,6 +3194,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -3636,6 +3339,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -3691,85 +3395,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &317394680
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 317394681}
-  - component: {fileID: 317394683}
-  - component: {fileID: 317394682}
-  m_Layer: 5
-  m_Name: Normal Hits
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &317394681
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 317394680}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.677, y: 4.677, z: 4.677}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1456701838}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -841, y: 721}
-  m_SizeDelta: {x: 459.7, y: 86.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &317394682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 317394680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 60
-    m_Alignment: 5
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Normal Notes Hit
---- !u!222 &317394683
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 317394680}
-  m_CullTransparentMesh: 0
 --- !u!1 &324750089
 GameObject:
   m_ObjectHideFlags: 0
@@ -3859,6 +3484,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -4003,6 +3629,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -4284,164 +3911,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
---- !u!1 &347990655
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 347990656}
-  - component: {fileID: 347990658}
-  - component: {fileID: 347990657}
-  m_Layer: 5
-  m_Name: Good Hits
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &347990656
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 347990655}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.677, y: 4.677, z: 4.677}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1456701838}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -841.00006, y: 414}
-  m_SizeDelta: {x: 459.7, y: 86.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &347990657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 347990655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 60
-    m_Alignment: 5
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Good Notes Hit
---- !u!222 &347990658
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 347990655}
-  m_CullTransparentMesh: 0
---- !u!1 &365315775
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 365315776}
-  - component: {fileID: 365315778}
-  - component: {fileID: 365315777}
-  m_Layer: 5
-  m_Name: Perfect Hits
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &365315776
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 365315775}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.677, y: 4.677, z: 4.677}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1456701838}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -841.00006, y: 203}
-  m_SizeDelta: {x: 459.7, y: 86.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &365315777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 365315775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 60
-    m_Alignment: 5
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Perfect Notes Hit
---- !u!222 &365315778
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 365315775}
-  m_CullTransparentMesh: 0
 --- !u!1 &373994502
 GameObject:
   m_ObjectHideFlags: 0
@@ -4531,6 +4000,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -4586,85 +4056,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &399953592
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 399953593}
-  - component: {fileID: 399953595}
-  - component: {fileID: 399953594}
-  m_Layer: 5
-  m_Name: Perfect Hits Value
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &399953593
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 399953592}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.677, y: 4.677, z: 4.677}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1456701838}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1424, y: 192}
-  m_SizeDelta: {x: 459.7, y: 86.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &399953594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 399953592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.054734774, g: 0.7735849, b: 0.08574541, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 60
-    m_Alignment: 3
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: XXX
---- !u!222 &399953595
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 399953592}
-  m_CullTransparentMesh: 0
 --- !u!1 &418924242
 GameObject:
   m_ObjectHideFlags: 0
@@ -4754,6 +4145,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -4898,6 +4290,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -5340,6 +4733,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -5421,7 +4815,7 @@ AudioSource:
   m_GameObject: {fileID: 458163218}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -4546633551440612961, guid: effa8e1e29e6c0949a327e8fb85ddfce, type: 2}
   m_audioClip: {fileID: 8300000, guid: 33f755ddeb3d7354486fb2fd160911d1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.2
@@ -5649,6 +5043,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -5793,6 +5188,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -5937,6 +5333,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -6086,6 +5483,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1605572183}
+        m_TargetAssemblyTypeName: ButtonSFX, Assembly-CSharp
+        m_MethodName: PlayTapSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &478285254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6213,6 +5622,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -6357,6 +5767,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -6412,134 +5823,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &515992356
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 515992358}
-  - component: {fileID: 515992357}
-  m_Layer: 0
-  m_Name: Audio Track
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &515992357
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 515992356}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ddd0eeba178a5f74f86fa09f38596e44, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &515992358
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 515992356}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -6551,6 +5834,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6632,6 +5916,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 519420032}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &519952362
 GameObject:
   m_ObjectHideFlags: 0
@@ -6721,6 +6065,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -6865,6 +6210,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -7009,6 +6355,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -7153,6 +6500,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -7297,6 +6645,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -7441,6 +6790,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -7585,6 +6935,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -7729,6 +7080,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -7873,6 +7225,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -8010,9 +7363,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 744973774}
-        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
-        m_MethodName: LoadScenes
+      - m_Target: {fileID: 1605572183}
+        m_TargetAssemblyTypeName: ButtonSFX, Assembly-CSharp
+        m_MethodName: PlayTapSoundThenLoad
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8285,7 +7638,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: GadisTaruna
+          m_StringArgument: EsaMokan
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &597269443
@@ -8467,6 +7820,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -8559,6 +7913,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -8703,6 +8058,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -8758,85 +8114,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &655578641
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 655578642}
-  - component: {fileID: 655578644}
-  - component: {fileID: 655578643}
-  m_Layer: 5
-  m_Name: Percent Hit Value
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &655578642
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655578641}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1294833729}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 280, y: -52}
-  m_SizeDelta: {x: 459.7, y: 86.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &655578643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655578641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.9896784, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 45
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 4
-    m_MaxSize: 60
-    m_Alignment: 3
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: XXX
---- !u!222 &655578644
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655578641}
-  m_CullTransparentMesh: 0
 --- !u!1 &661776893
 GameObject:
   m_ObjectHideFlags: 0
@@ -9091,6 +8368,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -9146,85 +8424,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &711114251
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 711114252}
-  - component: {fileID: 711114254}
-  - component: {fileID: 711114253}
-  m_Layer: 5
-  m_Name: Good Hits Value
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &711114252
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711114251}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.677, y: 4.677, z: 4.677}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1456701838}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1424, y: 403}
-  m_SizeDelta: {x: 459.7, y: 86.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &711114253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711114251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9479667, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 60
-    m_Alignment: 3
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: XXX
---- !u!222 &711114254
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711114251}
-  m_CullTransparentMesh: 0
 --- !u!1 &740940901
 GameObject:
   m_ObjectHideFlags: 0
@@ -9314,6 +8513,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -9369,85 +8569,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &744299383
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 744299384}
-  - component: {fileID: 744299386}
-  - component: {fileID: 744299385}
-  m_Layer: 5
-  m_Name: Rank
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &744299384
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 744299383}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1294833729}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -280, y: -206}
-  m_SizeDelta: {x: 459.7, y: 86.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &744299385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 744299383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 60
-    m_Alignment: 5
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Rank
---- !u!222 &744299386
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 744299383}
-  m_CullTransparentMesh: 0
 --- !u!1 &744834451
 GameObject:
   m_ObjectHideFlags: 0
@@ -9537,6 +8658,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -9725,6 +8847,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -10003,6 +9126,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -10147,6 +9271,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -10291,6 +9416,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -10435,6 +9561,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -10579,6 +9706,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -10723,6 +9851,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -10867,6 +9996,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -11004,16 +10134,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 744973774}
-        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
-        m_MethodName: LoadScenes
+      - m_Target: {fileID: 1605572183}
+        m_TargetAssemblyTypeName: ButtonSFX, Assembly-CSharp
+        m_MethodName: PlayTapSoundThenLoad
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: GadisTaruna
+          m_StringArgument: EsaMokan
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &805244749
@@ -11143,6 +10273,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -11198,85 +10329,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &840521940
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 840521941}
-  - component: {fileID: 840521943}
-  - component: {fileID: 840521942}
-  m_Layer: 5
-  m_Name: Normal Hits Value
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &840521941
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 840521940}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1294833729}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 280, y: 244}
-  m_SizeDelta: {x: 459.7, y: 86.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &840521942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 840521940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.5030503, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 60
-    m_Alignment: 3
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: XXX
---- !u!222 &840521943
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 840521940}
-  m_CullTransparentMesh: 0
 --- !u!1 &858140656
 GameObject:
   m_ObjectHideFlags: 0
@@ -11366,6 +10418,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -11510,6 +10563,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -11654,6 +10708,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -11709,85 +10764,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &893343070
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 893343071}
-  - component: {fileID: 893343073}
-  - component: {fileID: 893343072}
-  m_Layer: 5
-  m_Name: Normal Hits Value
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &893343071
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893343070}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.677, y: 4.677, z: 4.677}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1456701838}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1424, y: 721}
-  m_SizeDelta: {x: 459.7, y: 86.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &893343072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893343070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.5030503, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 60
-    m_Alignment: 3
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: XXX
---- !u!222 &893343073
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893343070}
-  m_CullTransparentMesh: 0
 --- !u!1 &898283209
 GameObject:
   m_ObjectHideFlags: 0
@@ -11866,85 +10842,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898283209}
-  m_CullTransparentMesh: 0
---- !u!1 &903966728
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 903966729}
-  - component: {fileID: 903966731}
-  - component: {fileID: 903966730}
-  m_Layer: 5
-  m_Name: Missed Hits
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &903966729
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 903966728}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.677, y: 4.677, z: 4.677}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1456701838}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -841.00006, y: 0}
-  m_SizeDelta: {x: 459.7, y: 86.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &903966730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 903966728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 60
-    m_Alignment: 5
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Missed Notes
---- !u!222 &903966731
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 903966728}
   m_CullTransparentMesh: 0
 --- !u!4 &909052786 stripped
 Transform:
@@ -12040,6 +10937,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -12184,6 +11082,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -12328,6 +11227,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -12472,6 +11372,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -12668,6 +11569,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -12760,6 +11662,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -12826,6 +11729,7 @@ GameObject:
   - component: {fileID: 959821455}
   - component: {fileID: 959821454}
   - component: {fileID: 959821456}
+  - component: {fileID: 959821457}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -12883,6 +11787,7 @@ MonoBehaviour:
   multiplierThresholds: 040000000800000010000000
   scoreText: {fileID: 36407417}
   multiText: {fileID: 1325051016}
+  multiplierEffect: {fileID: 1325051018}
   totalNotes: 0
   normalHits: 0
   goodHits: 0
@@ -12905,13 +11810,112 @@ MonoBehaviour:
   heartImage: {fileID: 1380792901}
   gameOverScreen: {fileID: 2018520261}
   gameOverScoreText: {fileID: 759301757}
+  gameOverSFX: {fileID: 8300000, guid: 60d2964badc25b04c9f8926504d23cce, type: 3}
+  sfxSource: {fileID: 959821457}
+  resultSFX: {fileID: 8300000, guid: 468dda676bed56f4da6a8654934ae166, type: 3}
   tapToStartText: {fileID: 425256075}
   hpColorHigh: {r: 0.11764706, g: 0.27450982, b: 0.1254902, a: 1}
   hpColorMedium: {r: 0.7607843, g: 0.57254905, b: 0, a: 1}
   hpColorLow: {r: 0.54509807, g: 0, b: 0, a: 1}
   isGameOver: 0
-  songID: song2
+  songID: EsaMokan
   hpConfig: {fileID: 11400000, guid: 029901f1a974e44439a491b883de1f22, type: 2}
+--- !u!82 &959821457
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959821453}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 6310576530452383563, guid: effa8e1e29e6c0949a327e8fb85ddfce, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &963802999
 GameObject:
   m_ObjectHideFlags: 0
@@ -13001,6 +12005,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -13145,6 +12150,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -13294,6 +12300,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1605572183}
+        m_TargetAssemblyTypeName: ButtonSFX, Assembly-CSharp
+        m_MethodName: PlayTapSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &985623425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13421,6 +12439,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -13565,6 +12584,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -13721,7 +12741,6 @@ RectTransform:
   - {fileID: 898283210}
   - {fileID: 1456701838}
   - {fileID: 2018520262}
-  - {fileID: 1294833729}
   - {fileID: 985623423}
   - {fileID: 1698537824}
   - {fileID: 668810067}
@@ -13821,6 +12840,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -13965,6 +12985,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -14095,85 +13116,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019068337}
   m_CullTransparentMesh: 1
---- !u!1 &1025074337
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1025074338}
-  - component: {fileID: 1025074340}
-  - component: {fileID: 1025074339}
-  m_Layer: 5
-  m_Name: Percent Hit
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1025074338
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1025074337}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1294833729}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -280, y: -52}
-  m_SizeDelta: {x: 459.7, y: 86.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1025074339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1025074337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 60
-    m_Alignment: 5
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Percentage Hit
---- !u!222 &1025074340
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1025074337}
-  m_CullTransparentMesh: 0
 --- !u!1 &1028577464
 GameObject:
   m_ObjectHideFlags: 0
@@ -14263,6 +13205,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -14475,16 +13418,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 744973774}
-        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
-        m_MethodName: LoadScenes
+      - m_Target: {fileID: 1605572183}
+        m_TargetAssemblyTypeName: ButtonSFX, Assembly-CSharp
+        m_MethodName: PlayTapSoundThenLoad
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: GadisTaruna
+          m_StringArgument: EsaMokan
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1038773575
@@ -14614,6 +13557,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -14892,6 +13836,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -14947,85 +13892,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1070598509
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1070598510}
-  - component: {fileID: 1070598512}
-  - component: {fileID: 1070598511}
-  m_Layer: 5
-  m_Name: Missed Hits Value
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1070598510
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070598509}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.677, y: 4.677, z: 4.677}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1456701838}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1424, y: 0}
-  m_SizeDelta: {x: 459.7, y: 86.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1070598511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070598509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.8490566, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 60
-    m_Alignment: 3
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: XXX
---- !u!222 &1070598512
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070598509}
-  m_CullTransparentMesh: 0
 --- !u!1 &1102742180
 GameObject:
   m_ObjectHideFlags: 0
@@ -15115,6 +13981,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -15259,6 +14126,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -15403,6 +14271,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -15547,6 +14416,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -15691,6 +14561,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -15835,6 +14706,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -15979,6 +14851,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -16123,6 +14996,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -16267,6 +15141,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -16411,6 +15286,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -16555,6 +15431,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -16610,85 +15487,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1200375144
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1200375145}
-  - component: {fileID: 1200375147}
-  - component: {fileID: 1200375146}
-  m_Layer: 5
-  m_Name: Missed Hits
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1200375145
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200375144}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1294833729}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -280, y: 53}
-  m_SizeDelta: {x: 459.7, y: 86.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1200375146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200375144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 60
-    m_Alignment: 5
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Missed Notes
---- !u!222 &1200375147
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200375144}
-  m_CullTransparentMesh: 0
 --- !u!1 &1220465832
 GameObject:
   m_ObjectHideFlags: 0
@@ -16778,6 +15576,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -16922,6 +15721,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -17066,6 +15866,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -17121,96 +15922,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1294833728
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1294833729}
-  - component: {fileID: 1294833731}
-  - component: {fileID: 1294833730}
-  m_Layer: 5
-  m_Name: Results
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1294833729
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1294833728}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
-  m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 35246223}
-  - {fileID: 2104549226}
-  - {fileID: 840521941}
-  - {fileID: 1499648815}
-  - {fileID: 2095083232}
-  - {fileID: 207126474}
-  - {fileID: 2056400983}
-  - {fileID: 1200375145}
-  - {fileID: 63860934}
-  - {fileID: 1025074338}
-  - {fileID: 655578642}
-  - {fileID: 744299384}
-  - {fileID: 1526502078}
-  - {fileID: 102991477}
-  - {fileID: 1529482721}
-  m_Father: {fileID: 1014584772}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1294833730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1294833728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1294833731
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1294833728}
-  m_CullTransparentMesh: 0
 --- !u!1 &1325051014
 GameObject:
   m_ObjectHideFlags: 0
@@ -17222,6 +15933,7 @@ GameObject:
   - component: {fileID: 1325051015}
   - component: {fileID: 1325051017}
   - component: {fileID: 1325051016}
+  - component: {fileID: 1325051018}
   m_Layer: 5
   m_Name: MultiplierText
   m_TagString: Untagged
@@ -17345,6 +16057,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1325051014}
   m_CullTransparentMesh: 1
+--- !u!114 &1325051018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325051014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c2486da493fd38438dacae0ddc187f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiplierText: {fileID: 1325051016}
+  blinkCount: 3
+  blinkInterval: 0.15
+  shakeDuration: 0.35
+  shakeMagnitude: 6
+  shakeFrequency: 40
 --- !u!1 &1336204378
 GameObject:
   m_ObjectHideFlags: 0
@@ -17434,6 +16164,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -17578,6 +16309,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -17797,6 +16529,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -17852,6 +16585,58 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1392572266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1392572268}
+  - component: {fileID: 1392572267}
+  m_Layer: 0
+  m_Name: ScreenVignette
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1392572267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392572266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9fb6f841774848468006c427d2810aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: {fileID: 2025814728}
+  intensityHigh: 0.15
+  intensityMedium: 0.38
+  intensityLow: 0.47
+  colorHigh: {r: 0, g: 0, b: 0, a: 0}
+  colorMedium: {r: 0.4627451, g: 0.4627451, b: 0.27450982, a: 1}
+  colorLow: {r: 0.55, g: 0, b: 0, a: 1}
+  smoothSpeed: 3.5
+--- !u!4 &1392572268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392572266}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.4, z: 90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1397718943
 GameObject:
   m_ObjectHideFlags: 0
@@ -17941,6 +16726,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -18085,6 +16871,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -18229,6 +17016,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -18366,9 +17154,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 744973774}
-        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
-        m_MethodName: LoadScenes
+      - m_Target: {fileID: 1605572183}
+        m_TargetAssemblyTypeName: ButtonSFX, Assembly-CSharp
+        m_MethodName: PlayTapSoundThenLoad
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18505,6 +17293,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -18649,6 +17438,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -18793,6 +17583,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -18937,6 +17728,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -19022,14 +17814,6 @@ RectTransform:
   m_LocalScale: {x: 0.76124996, y: 0.5615012, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 317394681}
-  - {fileID: 893343071}
-  - {fileID: 347990656}
-  - {fileID: 711114252}
-  - {fileID: 365315776}
-  - {fileID: 399953593}
-  - {fileID: 903966729}
-  - {fileID: 1070598510}
   - {fileID: 1969130197}
   - {fileID: 579617937}
   - {fileID: 1800579259}
@@ -19388,6 +18172,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -19532,6 +18317,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -19676,6 +18462,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -19731,85 +18518,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1499648814
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1499648815}
-  - component: {fileID: 1499648817}
-  - component: {fileID: 1499648816}
-  m_Layer: 5
-  m_Name: Good Hits
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1499648815
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499648814}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1294833729}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -280, y: 181}
-  m_SizeDelta: {x: 459.7, y: 86.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1499648816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499648814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 60
-    m_Alignment: 5
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Good Notes Hit
---- !u!222 &1499648817
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499648814}
-  m_CullTransparentMesh: 0
 --- !u!850595691 &1505288665
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -19963,6 +18671,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -20107,6 +18816,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -20251,6 +18961,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -20306,180 +19017,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1526502077
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1526502078}
-  - component: {fileID: 1526502080}
-  - component: {fileID: 1526502079}
-  m_Layer: 5
-  m_Name: Rank Value
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1526502078
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526502077}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1294833729}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 279.99988, y: -206.00002}
-  m_SizeDelta: {x: 459.7, y: 181.8}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1526502079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526502077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.8962264, g: 0.3655476, b: 0.012682426, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 85
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 300
-    m_Alignment: 3
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: X
---- !u!222 &1526502080
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526502077}
-  m_CullTransparentMesh: 0
---- !u!1 &1529482720
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1529482721}
-  - component: {fileID: 1529482724}
-  - component: {fileID: 1529482723}
-  - component: {fileID: 1529482722}
-  m_Layer: 5
-  m_Name: Final Score Value
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1529482721
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1529482720}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1294833729}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -408}
-  m_SizeDelta: {x: 753.2, y: 86.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1529482722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1529482720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
-  m_EffectDistance: {x: 2, y: 2}
-  m_UseGraphicAlpha: 1
---- !u!114 &1529482723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1529482720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 62
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 75
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: XXXXXXX
---- !u!222 &1529482724
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1529482720}
-  m_CullTransparentMesh: 0
 --- !u!1 &1530617840
 GameObject:
   m_ObjectHideFlags: 0
@@ -20569,6 +19106,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -20713,6 +19251,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -20857,6 +19396,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -20961,6 +19501,8 @@ GameObject:
   - component: {fileID: 1605572181}
   - component: {fileID: 1605572180}
   - component: {fileID: 1605572179}
+  - component: {fileID: 1605572184}
+  - component: {fileID: 1605572183}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -21051,6 +19593,115 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1605572183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605572178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 645d70b2bd4264d4d9a6d80495d7bbb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tapSound: {fileID: 8300000, guid: a8f7b97a50d774a46b0ae2b4a37f6f3a, type: 3}
+--- !u!82 &1605572184
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605572178}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 6310576530452383563, guid: effa8e1e29e6c0949a327e8fb85ddfce, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1617652940
 GameObject:
   m_ObjectHideFlags: 0
@@ -21140,6 +19791,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -21284,6 +19936,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -21428,6 +20081,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -21572,6 +20226,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -21716,6 +20371,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -21860,6 +20516,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -22004,6 +20661,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -22216,6 +20874,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -22438,6 +21097,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -22582,6 +21242,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -22726,6 +21387,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -22870,6 +21532,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -23014,6 +21677,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -23292,6 +21956,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -23436,6 +22101,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -23580,6 +22246,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -23724,6 +22391,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -23868,6 +22536,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -24012,6 +22681,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -24156,6 +22826,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -24300,6 +22971,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -24444,6 +23116,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -24588,6 +23261,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -24732,6 +23406,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -24876,6 +23551,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -25020,6 +23696,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -25164,6 +23841,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -25472,6 +24150,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -25750,6 +24429,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -25969,6 +24649,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -26191,6 +24872,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -26246,6 +24928,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2025814727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2025814729}
+  - component: {fileID: 2025814728}
+  m_Layer: 7
+  m_Name: Post Process Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2025814728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025814727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: d82ce37b41dbc1744b1fa86fb31508de, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
+--- !u!4 &2025814729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025814727}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 612, y: 1360, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2035195264
 GameObject:
   m_ObjectHideFlags: 0
@@ -26335,6 +25066,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -26479,6 +25211,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -26534,85 +25267,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2056400982
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2056400983}
-  - component: {fileID: 2056400985}
-  - component: {fileID: 2056400984}
-  m_Layer: 5
-  m_Name: Perfect Hits Value
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2056400983
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056400982}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1294833729}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 280, y: 118}
-  m_SizeDelta: {x: 459.7, y: 86.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2056400984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056400982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.054734774, g: 0.7735849, b: 0.08574541, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 60
-    m_Alignment: 3
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: XXX
---- !u!222 &2056400985
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056400982}
-  m_CullTransparentMesh: 0
 --- !u!1 &2078381447
 GameObject:
   m_ObjectHideFlags: 0
@@ -26702,6 +25356,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -26846,6 +25501,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -26990,6 +25646,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -27134,6 +25791,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -27189,85 +25847,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2095083231
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2095083232}
-  - component: {fileID: 2095083234}
-  - component: {fileID: 2095083233}
-  m_Layer: 5
-  m_Name: Good Hits Value
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2095083232
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2095083231}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1294833729}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 280, y: 181}
-  m_SizeDelta: {x: 459.7, y: 86.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2095083233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2095083231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9479667, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 60
-    m_Alignment: 3
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: XXX
---- !u!222 &2095083234
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2095083231}
-  m_CullTransparentMesh: 0
 --- !u!1 &2098345110
 GameObject:
   m_ObjectHideFlags: 0
@@ -27357,6 +25936,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -27412,85 +25992,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2104549225
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2104549226}
-  - component: {fileID: 2104549228}
-  - component: {fileID: 2104549227}
-  m_Layer: 5
-  m_Name: Normal Hits
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2104549226
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2104549225}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1294833729}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -280, y: 244}
-  m_SizeDelta: {x: 459.7, y: 86.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2104549227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2104549225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 60
-    m_Alignment: 5
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Normal Notes Hit
---- !u!222 &2104549228
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2104549225}
-  m_CullTransparentMesh: 0
 --- !u!1 &2118340607
 GameObject:
   m_ObjectHideFlags: 0
@@ -27747,6 +26248,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -27891,6 +26393,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -28035,6 +26538,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -28179,6 +26683,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -28323,6 +26828,7 @@ MonoBehaviour:
   hitTextEffect: {fileID: 0}
   goodTextEffect: {fileID: 0}
   perfectTextEffect: {fileID: 0}
+  missTextEffect: {fileID: 0}
   hitZone: {fileID: 0}
   beatTime: 0
   scrollSpeed: 0
@@ -28444,7 +26950,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 515992358}
   - {fileID: 2125296781}
   - {fileID: 1605572182}
   - {fileID: 1665987928}
@@ -28455,3 +26960,5 @@ SceneRoots:
   - {fileID: 661776895}
   - {fileID: 329155141}
   - {fileID: 744973775}
+  - {fileID: 2025814729}
+  - {fileID: 1392572268}

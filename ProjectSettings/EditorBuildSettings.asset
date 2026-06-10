@@ -9,15 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 1c5fb3bb27d59c64da08143ec0f22d01
   - enabled: 1
-    path: Assets/Scenes/Games/EsaMokan.unity
-    guid: 32175fd4788ef354c8769b70837e2ce0
+    path: Assets/Scenes/Games/OInaNiKeke.unity
+    guid: d2aa3e09a41432a4a82faf9fcd21186c
   - enabled: 1
     path: Assets/Scenes/Games/GadisTaruna.unity
     guid: 17af2fc3c7198324abcee12a4d10d510
   - enabled: 1
-    path: Assets/Scenes/Games/OInaNiKeke.unity
-    guid: c9dd9ce0a03d94e4b92731110cf4e7ef
+    path: Assets/Scenes/Games/EsaMokan.unity
+    guid: 534acf1b1604d2f4a9a5bd6f3ed62076
   - enabled: 1
     path: Assets/Scenes/Games/SiPatokaan.unity
-    guid: 3ef54d3b6d3bb7c448da6c01ff3699fa
+    guid: a9e0870464b47994ca12e7a11a6d79f5
   m_configObjects: {}
