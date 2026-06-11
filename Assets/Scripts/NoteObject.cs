@@ -6,7 +6,12 @@ public class NoteObject : MonoBehaviour
 {
     public bool canBePressed;
 
-    public KeyCode keyToPress;
+    // laneIndex diisi otomatis oleh NoteSpawner — tidak perlu diisi manual
+    [HideInInspector] public int laneIndex;
+
+    // KeyCode dipertahankan agar NoteSpawner tidak perlu diubah,
+    // tapi tidak lagi dipakai untuk input di HP build.
+    [HideInInspector] public KeyCode keyToPress;
 
     public GameObject hitEffect, goodEffect, perfectEffect;
     public GameObject hitTextEffect, goodTextEffect, perfectTextEffect, missTextEffect;
@@ -22,7 +27,6 @@ public class NoteObject : MonoBehaviour
     {
         if (GameManager.instance.isPaused) return;
 
-        // ← TARUH DI SINI
         if (!_logged)
         {
             Debug.Log($"[Note] HitZone Y:{hitZone.position.y} BeatTime:{beatTime} ScrollSpeed:{scrollSpeed}");
@@ -32,35 +36,37 @@ public class NoteObject : MonoBehaviour
         float timeUntilBeat = beatTime - GameManager.instance.theMusic.time;
         transform.position = new Vector3(transform.position.x, hitZone.position.y + timeUntilBeat * scrollSpeed, 0f);
 
-        if (Input.GetKeyDown(keyToPress))
+        // Gunakan LaneInputManager untuk touch; fallback ke KeyCode jika tidak ada
+        bool pressed = (LaneInputManager.instance != null)
+            ? LaneInputManager.instance.GetLaneDown(laneIndex)
+            : Input.GetKeyDown(keyToPress);
+
+        if (pressed && canBePressed)
         {
-            if (canBePressed)
+            gameObject.SetActive(false);
+
+            float distanceFromHitZone = Mathf.Abs(transform.position.y - hitZone.position.y);
+
+            if (distanceFromHitZone > 0.25f)
             {
-                gameObject.SetActive(false);
-
-                float distanceFromHitZone = Mathf.Abs(transform.position.y - hitZone.position.y);
-
-                if (distanceFromHitZone > 0.25f)
-                {
-                    Debug.Log("Hit");
-                    GameManager.instance.NormalHit();
-                    Instantiate(hitEffect, transform.position, hitEffect.transform.rotation);
-                    Instantiate(hitTextEffect, transform.position, Quaternion.identity);
-                }
-                else if (distanceFromHitZone > 0.05f)
-                {
-                    Debug.Log("Good");
-                    GameManager.instance.GoodHit();
-                    Instantiate(goodEffect, transform.position, goodEffect.transform.rotation);
-                    Instantiate(goodTextEffect, transform.position, Quaternion.identity);
-                }
-                else
-                {
-                    Debug.Log("Perfect");
-                    GameManager.instance.PerfectHit();
-                    Instantiate(perfectEffect, transform.position, perfectEffect.transform.rotation);
-                    Instantiate(perfectTextEffect, transform.position, Quaternion.identity);
-                }
+                Debug.Log("Hit");
+                GameManager.instance.NormalHit();
+                Instantiate(hitEffect, transform.position, hitEffect.transform.rotation);
+                Instantiate(hitTextEffect, transform.position, Quaternion.identity);
+            }
+            else if (distanceFromHitZone > 0.05f)
+            {
+                Debug.Log("Good");
+                GameManager.instance.GoodHit();
+                Instantiate(goodEffect, transform.position, goodEffect.transform.rotation);
+                Instantiate(goodTextEffect, transform.position, Quaternion.identity);
+            }
+            else
+            {
+                Debug.Log("Perfect");
+                GameManager.instance.PerfectHit();
+                Instantiate(perfectEffect, transform.position, perfectEffect.transform.rotation);
+                Instantiate(perfectTextEffect, transform.position, Quaternion.identity);
             }
         }
     }
@@ -68,9 +74,7 @@ public class NoteObject : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Activator")
-        {
             canBePressed = true;
-        }
     }
 
     private static bool _isQuitting = false;

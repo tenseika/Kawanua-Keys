@@ -6,28 +6,22 @@ using System.Globalization;
 
 public class NoteSpawner : MonoBehaviour
 {
-    public GameObject[] notePrefabs;  // Assign 4 prefabs in Inspector, one per lane
-
+    public GameObject[] notePrefabs;
     public Transform[] lanes;
     public KeyCode[] laneKeys;
-
-    public Transform[] hitZone; // drag your Activator object here in Inspector
-
+    public Transform[] hitZone;
     public float scrollSpeed = 3f;
-
     public TextAsset chartFile;
 
     void Start()
     {
         List<float> timestamps = ParseChart(chartFile.text);
 
-        // Ganti dengan ini:
-        int prevLane1 = -1; // note tepat sebelumnya
-        int prevLane2 = -1; // note 2 langkah sebelumnya
+        int prevLane1 = -1;
+        int prevLane2 = -1;
 
         foreach (float beatTime in timestamps)
         {
-            // Ganti dengan ini:
             int randomLane;
             do
             {
@@ -38,20 +32,19 @@ public class NoteSpawner : MonoBehaviour
             prevLane1 = randomLane;
 
             float startY = beatTime * scrollSpeed;
-
             Vector3 spawnPos = new Vector3(lanes[randomLane].position.x, startY, 0f);
             Debug.Log($"[Spawn] BeatTime:{beatTime} StartY:{startY} ScrollSpeed:{scrollSpeed}");
 
-            // Use the prefab that matches the lane index
             GameObject newNote = Instantiate(notePrefabs[randomLane], spawnPos, Quaternion.identity);
 
             NoteObject note = newNote.GetComponent<NoteObject>();
             if (note != null)
             {
-                note.beatTime = beatTime;
+                note.beatTime    = beatTime;
                 note.scrollSpeed = scrollSpeed;
-                note.keyToPress = laneKeys[randomLane];
-                note.hitZone = hitZone[randomLane]; // assign hit zone to each spawned note
+                note.keyToPress  = laneKeys[randomLane];
+                note.hitZone     = hitZone[randomLane];
+                note.laneIndex   = randomLane; // ← baru: untuk touch input
             }
         }
     }
@@ -59,15 +52,12 @@ public class NoteSpawner : MonoBehaviour
     List<float> ParseChart(string text)
     {
         List<float> timestamps = new List<float>();
-
         string[] lines = text.Split('\n');
 
         foreach (string line in lines)
         {
             string trimmed = line.Trim();
-
             if (string.IsNullOrEmpty(trimmed)) continue;
-
             timestamps.Add(ParseTimestamp(trimmed));
         }
 
@@ -83,12 +73,10 @@ public class NoteSpawner : MonoBehaviour
             int minutes = int.Parse(parts[0]);
             int seconds = int.Parse(parts[1]);
             float milliseconds = float.Parse(parts[2], CultureInfo.InvariantCulture) / 1000f;
-
             return (minutes * 60f) + seconds + milliseconds;
         }
         else
         {
-            // Fix di sini
             return float.Parse(value, CultureInfo.InvariantCulture);
         }
     }

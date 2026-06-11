@@ -8,25 +8,23 @@ public class ButtonController : MonoBehaviour
     public Sprite defaultImage;
     public Sprite pressedImage;
 
-    public KeyCode keyToPress;
-    
-    // Start is called before the first frame update
+    // Nomor lane yang diwakili tombol ini (0 = paling kiri)
+    // Harus sama dengan index di LaneInputManager.laneAreas
+    public int laneIndex;
+
     void Start()
     {
         theSR = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(keyToPress))
-        {
-            theSR.sprite = pressedImage;
-        }
+        if (LaneInputManager.instance == null) return;
 
-        if(Input.GetKeyUp(keyToPress))
-        {
+        if (LaneInputManager.instance.GetLaneDown(laneIndex))
+            theSR.sprite = pressedImage;
+
+        if (LaneInputManager.instance.GetLaneUp(laneIndex))
             theSR.sprite = defaultImage;
-        }
     }
 }
