@@ -32,8 +32,10 @@ public class GameManager : MonoBehaviour
     public float missedHits;
 
     public bool isPaused;
+    [HideInInspector] public bool isCountingDown;
     public GameObject pauseScreen;
     public TMP_Text countdownText;
+    public GameObject pauseButton; // drag tombol pause ke sini
 
     public GameObject resultsScreen;
     public TMP_Text percentHitText, rankText, finalScoreText;
@@ -59,6 +61,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Result SFX")]
     public AudioClip resultSFX;
+
+    [Header("Countdown SFX")]
+    public AudioClip countdownSFX;
 
     public TMP_Text tapToStartText;
 
@@ -92,6 +97,8 @@ public class GameManager : MonoBehaviour
         currentMultiplier = 1;
 
         UpdateHPDisplay();
+
+        if (pauseButton != null) pauseButton.SetActive(false); // sembunyikan dulu
     }
 
     // Membaca nilai dari SongHPConfig dan menimpa field lokal
@@ -119,6 +126,7 @@ public class GameManager : MonoBehaviour
             {
                 startPlaying = true;
                 tapToStartText.gameObject.SetActive(false);
+                if (pauseButton != null) pauseButton.SetActive(true); // tampilkan sekarang
                 StartCoroutine(StartSong());
             }
         }
@@ -127,6 +135,7 @@ public class GameManager : MonoBehaviour
             if (!theMusic.isPlaying && !resultsScreen.activeInHierarchy && !isPaused)
             {
                 resultsScreen.SetActive(true);
+                if (pauseButton != null) pauseButton.SetActive(false);
 
                 float weightedScore    = (perfectHits * 100f) + (goodHits * 75f) + (normalHits * 50f) + (missedHits * -25f);
                 float maxPossibleScore = totalNotes * 100f;
@@ -251,6 +260,8 @@ public class GameManager : MonoBehaviour
         if (sfxSource != null && gameOverSFX != null)
             sfxSource.PlayOneShot(gameOverSFX);
 
+        if (pauseButton != null) pauseButton.SetActive(false);
+
         if (gameOverScreen != null)
         {
             gameOverScreen.SetActive(true);
@@ -261,6 +272,8 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
+        if (isCountingDown) return; // cegah pause saat countdown berjalan
+        
         isPaused = true;
         theMusic.Pause();
         pauseScreen.SetActive(true);
@@ -273,16 +286,27 @@ public class GameManager : MonoBehaviour
 
     IEnumerator ResumeCountdown()
     {
+        isCountingDown = true;
+        if (pauseButton != null) pauseButton.SetActive(false);
+        
         pauseScreen.SetActive(false);
         countdownText.gameObject.SetActive(true);
 
-        countdownText.text = "3"; yield return new WaitForSecondsRealtime(1f);
-        countdownText.text = "2"; yield return new WaitForSecondsRealtime(1f);
-        countdownText.text = "1"; yield return new WaitForSecondsRealtime(1f);
+        countdownText.text = "3"; PlayCountdownSFX(); yield return new WaitForSecondsRealtime(1f);
+        countdownText.text = "2"; PlayCountdownSFX(); yield return new WaitForSecondsRealtime(1f);
+        countdownText.text = "1"; PlayCountdownSFX(); yield return new WaitForSecondsRealtime(1f);
 
         countdownText.gameObject.SetActive(false);
         isPaused = false;
+        isCountingDown = false;
+        if (pauseButton != null) pauseButton.SetActive(true);
         theMusic.UnPause();
+    }
+
+    void PlayCountdownSFX()
+    {
+        if (sfxSource != null && countdownSFX != null)
+            sfxSource.PlayOneShot(countdownSFX);
     }
 
     void SaveRecord(float accuracy, string rank, int score)
@@ -316,5 +340,16 @@ public class GameManager : MonoBehaviour
         int newIndex = System.Array.IndexOf(order, newRank);
         int oldIndex = System.Array.IndexOf(order, oldRank);
         return newIndex > oldIndex;
+    }
+
+    // ── Cek apakah semua input lane harus diblokir ───────────
+    public bool IsInputBlocked()
+    {
+        if (isCountingDown) return true;        // countdown resume sedang berjalan
+        if (isPaused) return true;              // pause screen sedang muncul
+        if (isGameOver) return true;            // game over screen sedang muncul
+        if (resultsScreen != null && resultsScreen.activeInHierarchy) return true; // results screen muncul
+
+        return false;
     }
 }

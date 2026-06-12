@@ -5512,18 +5512,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1605572183}
-        m_TargetAssemblyTypeName: ButtonSFX, Assembly-CSharp
-        m_MethodName: PlayTapSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &478285254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11858,8 +11846,10 @@ MonoBehaviour:
   perfectHits: 0
   missedHits: 0
   isPaused: 0
+  isCountingDown: 0
   pauseScreen: {fileID: 1698537823}
   countdownText: {fileID: 668810069}
+  pauseButton: {fileID: 985623422}
   resultsScreen: {fileID: 1456701837}
   percentHitText: {fileID: 1969130198}
   rankText: {fileID: 579617938}
@@ -11877,6 +11867,7 @@ MonoBehaviour:
   gameOverSFX: {fileID: 8300000, guid: 60d2964badc25b04c9f8926504d23cce, type: 3}
   sfxSource: {fileID: 959821457}
   resultSFX: {fileID: 8300000, guid: 468dda676bed56f4da6a8654934ae166, type: 3}
+  countdownSFX: {fileID: 8300000, guid: 9589708a1dee1724da0abea911ae8321, type: 3}
   tapToStartText: {fileID: 425256075}
   hpColorHigh: {r: 0.11764706, g: 0.27450982, b: 0.1254902, a: 1}
   hpColorMedium: {r: 0.7607843, g: 0.57254905, b: 0, a: 1}

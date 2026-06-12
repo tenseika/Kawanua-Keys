@@ -143,6 +143,10 @@ public class LaneInputManager : MonoBehaviour
             _justDown[i] = false;
             _justUp[i]   = false;
         }
+
+        // Blokir semua input lane jika kondisi tertentu aktif
+        if (GameManager.instance != null && GameManager.instance.IsInputBlocked())
+            return;
  
         HashSet<int> activeTouchIds = new HashSet<int>();
  
