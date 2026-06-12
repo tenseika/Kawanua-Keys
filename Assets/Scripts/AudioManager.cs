@@ -16,6 +16,9 @@ public class AudioManager : MonoBehaviour
     public Slider musicSlider;
     public Slider sfxSlider;
 
+    [Header("Boost (dB tambahan di atas 0dB saat slider penuh)")]
+    [Range(0f, 20f)] public float maxBoostDb = 6f; // mulai dari 6dB, naikkan jika masih kurang
+
     // PlayerPrefs keys
     const string MASTER_KEY = "vol_master";
     const string MUSIC_KEY  = "vol_music";
@@ -102,6 +105,9 @@ public class AudioManager : MonoBehaviour
 
     float LinearToDecibel(float linear)
     {
-        return linear > 0.0001f ? Mathf.Log10(linear) * 20f : -80f;
+        if (linear <= 0.0001f) return -80f;
+
+        // Geser seluruh kurva ke atas sebesar maxBoostDb
+        return Mathf.Log10(linear) * 20f + maxBoostDb;
     }
 }

@@ -1,0 +1,87 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+// ============================================================
+//  BackPressHandler
+// ============================================================
+//  Menampilkan Toast Android native saat pemain menekan tombol
+//  Back, Home, atau Recent Apps di scene MainMenu.
+//  Tekan 2× dalam window waktu yang ditentukan untuk keluar.
+//
+//  Setup di Unity:
+//  1. Buat GameObject kosong bernama "BackPressHandler"
+//     di scene MainMenu.
+//  2. Tambahkan script ini ke GameObject tersebut.
+//  3. Atur "exitWindow" di Inspector (default: 2 detik).
+//  4. Atur "toastMessage" sesuai teks yang ingin ditampilkan.
+//  5. Build target harus Android.
+// ============================================================
+
+public class BackPressHandler : MonoBehaviour
+{
+    [Tooltip("Pesan Toast yang ditampilkan saat pertama kali menekan back.")]
+    public string toastMessage = "Tekan sekali lagi untuk keluar";
+
+    [Tooltip("Jarak waktu (detik) antara dua tekanan agar dihitung double-press.")]
+    public float exitWindow = 2f;
+
+    private float _lastBackTime = -999f;
+
+    void Update()
+    {
+        // Input.backButton mencakup tombol Back fisik/gesture Android.
+        // Untuk Home & Recent Apps, Android menanganinya di OS level —
+        // kita tidak bisa intercept keduanya dari Unity, tapi back button
+        // sudah mencakup mayoritas use-case "keluar dari app".
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            float now = Time.unscaledTime;
+
+            if (now - _lastBackTime <= exitWindow)
+            {
+                // Tekan kedua dalam window → keluar
+                Application.Quit();
+
+#if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+#endif
+            }
+            else
+            {
+                // Tekan pertama → tampilkan toast dan catat waktu
+                _lastBackTime = now;
+                ShowToast(toastMessage);
+            }
+        }
+    }
+
+    // ── Android Native Toast via JNI ─────────────────────────
+    // Menggunakan android.widget.Toast sehingga tampilan
+    // mengikuti UI / tema bawaan perangkat masing-masing pemain.
+
+    void ShowToast(string message)
+    {
+#if UNITY_ANDROID && !UNITY_EDITOR
+        // Semua panggilan UI Android harus berjalan di main thread Android.
+        AndroidJavaClass  unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+        AndroidJavaObject activity    = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+
+        activity.Call("runOnUiThread", new AndroidJavaRunnable(() =>
+        {
+            AndroidJavaClass  toastClass  = new AndroidJavaClass("android.widget.Toast");
+            AndroidJavaObject context     = activity.Call<AndroidJavaObject>("getApplicationContext");
+            AndroidJavaObject javaMessage = new AndroidJavaObject("java.lang.String", message);
+
+            // Toast.LENGTH_SHORT = 0, Toast.LENGTH_LONG = 1
+            AndroidJavaObject toast = toastClass.CallStatic<AndroidJavaObject>(
+                "makeText", context, javaMessage, 0
+            );
+            toast.Call("show");
+        }));
+#else
+        // Fallback di Editor: cetak ke Console
+        Debug.Log($"[BackPressHandler] Toast: {message}");
+#endif
+    }
+}
