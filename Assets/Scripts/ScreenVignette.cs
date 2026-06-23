@@ -69,8 +69,15 @@ public class ScreenVignette : MonoBehaviour
         float targetIntensity = GetTargetIntensity(ratio);
         Color targetColor     = GetTargetColor(ratio);
 
-        _currentIntensity = Mathf.Lerp(_currentIntensity, targetIntensity, Time.deltaTime * smoothSpeed);
-        _currentColor     = Color.Lerp(_currentColor,     targetColor,     Time.deltaTime * smoothSpeed);
+        /*_currentIntensity = Mathf.Lerp(_currentIntensity, targetIntensity, Time.deltaTime * smoothSpeed);
+        _currentColor     = Color.Lerp(_currentColor,     targetColor,     Time.deltaTime * smoothSpeed);*/
+
+        _currentIntensity = Mathf.Lerp(_currentIntensity, 
+                                        targetIntensity, 
+                                        Time.deltaTime * smoothSpeed);
+        _currentColor     = Color.Lerp(_currentColor,
+                                        targetColor,
+                                        Time.deltaTime * smoothSpeed);
 
         _vignette.intensity.value = Mathf.Clamp01(_currentIntensity);
         _vignette.color.value     = _currentColor;

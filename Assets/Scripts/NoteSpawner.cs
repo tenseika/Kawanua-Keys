@@ -8,7 +8,7 @@ public class NoteSpawner : MonoBehaviour
 {
     public GameObject[] notePrefabs;
     public Transform[] lanes;
-    public KeyCode[] laneKeys;
+    [HideInInspector] public KeyCode[] laneKeys;
     public Transform[] hitZone;
     public float scrollSpeed = 3f;
     public TextAsset chartFile;
@@ -44,7 +44,7 @@ public class NoteSpawner : MonoBehaviour
                 note.scrollSpeed = scrollSpeed;
                 note.keyToPress  = laneKeys[randomLane];
                 note.hitZone     = hitZone[randomLane];
-                note.laneIndex   = randomLane; // ← baru: untuk touch input
+                note.laneIndex   = randomLane;
             }
         }
     }

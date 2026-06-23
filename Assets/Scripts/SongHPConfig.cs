@@ -6,10 +6,10 @@ using UnityEngine;
 public class SongHPConfig : ScriptableObject
 {
     [Header("HP Gain")]
-    public float hpPerPerfect = 3f;
-    public float hpPerGood    = 1f;
+    public float hpPerPerfect;
+    public float hpPerGood;
 
     [Header("HP Damage")]
-    public float hpPerNormal  = -3f;   // hit biasa (terlambat/terlalu cepat)
-    public float hpPerMiss    = -10f;
+    public float hpPerNormal;   // hit biasa (terlambat/terlalu cepat)
+    public float hpPerMiss;
 }

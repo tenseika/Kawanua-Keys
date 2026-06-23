@@ -6,21 +6,20 @@ public class RecordManager : MonoBehaviour
     [System.Serializable]
     public class SongRecord
     {
-        public string songID;           // harus sama dengan songID di GameManager tiap scene
+        public string songID;
         public TMP_Text accuracyText;
         public TMP_Text rankText;
         public TMP_Text scoreText;
     }
 
-    public SongRecord[] songs;          // isi 4 entri di Inspector
-
+    public SongRecord[] songs;
     [Header("Average Display")]
     public TMP_Text avgAccuracyText;
     public TMP_Text avgRankText;
 
     void OnEnable()
     {
-        RefreshUI();  // refresh setiap kali UI ini dibuka
+        RefreshUI();
     }
 
     void RefreshUI()
@@ -37,7 +36,6 @@ public class RecordManager : MonoBehaviour
             string rank  = PlayerPrefs.GetString(song.songID + "_rank",     "");
             int    score = PlayerPrefs.GetInt(song.songID    + "_score",    0);
 
-            // Tampilkan per lagu
             song.accuracyText.text = acc   >= 0f    ? acc.ToString("F1") + "%" : "-";
             song.rankText.text     = rank  != ""    ? rank                     : "-";
             song.scoreText.text    = score > 0      ? score.ToString()         : "-";

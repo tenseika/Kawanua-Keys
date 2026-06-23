@@ -34,7 +34,9 @@ public class NoteObject : MonoBehaviour
         }
 
         float timeUntilBeat = beatTime - GameManager.instance.theMusic.time;
-        transform.position = new Vector3(transform.position.x, hitZone.position.y + timeUntilBeat * scrollSpeed, 0f);
+        transform.position = new Vector3(
+            transform.position.x, 
+            hitZone.position.y + timeUntilBeat * scrollSpeed, 0f);
 
         // Gunakan LaneInputManager untuk touch; fallback ke KeyCode jika tidak ada
         bool pressed = (LaneInputManager.instance != null)
@@ -49,21 +51,18 @@ public class NoteObject : MonoBehaviour
 
             if (distanceFromHitZone > 0.25f)
             {
-                Debug.Log("Hit");
                 GameManager.instance.NormalHit();
                 Instantiate(hitEffect, transform.position, hitEffect.transform.rotation);
                 Instantiate(hitTextEffect, transform.position, Quaternion.identity);
             }
             else if (distanceFromHitZone > 0.05f)
             {
-                Debug.Log("Good");
                 GameManager.instance.GoodHit();
                 Instantiate(goodEffect, transform.position, goodEffect.transform.rotation);
                 Instantiate(goodTextEffect, transform.position, Quaternion.identity);
             }
             else
             {
-                Debug.Log("Perfect");
                 GameManager.instance.PerfectHit();
                 Instantiate(perfectEffect, transform.position, perfectEffect.transform.rotation);
                 Instantiate(perfectTextEffect, transform.position, Quaternion.identity);

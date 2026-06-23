@@ -8310,6 +8310,53 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &692077612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 692077614}
+  - component: {fileID: 692077613}
+  m_Layer: 0
+  m_Name: FPS Counter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &692077613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692077612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c2ae72ce185524abdd8925175b46ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fpsText: {fileID: 0}
+  smoothingFactor: 0.1
+  updateInterval: 0.2
+--- !u!4 &692077614
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692077612}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 612, y: 1360, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &700623360
 GameObject:
   m_ObjectHideFlags: 0
@@ -11851,6 +11898,8 @@ MonoBehaviour:
   countdownText: {fileID: 668810069}
   pauseButton: {fileID: 985623422}
   resultsScreen: {fileID: 1456701837}
+  gameOverScreen: {fileID: 2018520261}
+  gameOverScoreText: {fileID: 759301757}
   percentHitText: {fileID: 1969130198}
   rankText: {fileID: 579617938}
   finalScoreText: {fileID: 1800579260}
@@ -11862,8 +11911,6 @@ MonoBehaviour:
   hpPerMiss: -10
   hpText: {fileID: 1053010830}
   heartImage: {fileID: 1380792901}
-  gameOverScreen: {fileID: 2018520261}
-  gameOverScoreText: {fileID: 759301757}
   gameOverSFX: {fileID: 8300000, guid: 60d2964badc25b04c9f8926504d23cce, type: 3}
   sfxSource: {fileID: 959821457}
   resultSFX: {fileID: 8300000, guid: 468dda676bed56f4da6a8654934ae166, type: 3}
@@ -27153,3 +27200,4 @@ SceneRoots:
   - {fileID: 2025814729}
   - {fileID: 1392572268}
   - {fileID: 1614047163}
+  - {fileID: 692077614}

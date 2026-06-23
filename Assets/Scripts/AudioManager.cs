@@ -60,22 +60,18 @@ public class AudioManager : MonoBehaviour
 
     public void ReconnectSliders(Slider master, Slider music, Slider sfx)
     {
-        // Lepas listener lama dulu agar tidak double
         if (masterSlider != null) masterSlider.onValueChanged.RemoveAllListeners();
         if (musicSlider  != null) musicSlider.onValueChanged.RemoveAllListeners();
         if (sfxSlider    != null) sfxSlider.onValueChanged.RemoveAllListeners();
 
-        // Sambung slider baru
         masterSlider = master;
         musicSlider  = music;
         sfxSlider    = sfx;
 
-        // Sync nilai slider ke volume saat ini (baca dari PlayerPrefs)
         masterSlider.value = PlayerPrefs.GetFloat(MASTER_KEY, 0.75f);
         musicSlider.value  = PlayerPrefs.GetFloat(MUSIC_KEY,  0.75f);
         sfxSlider.value    = PlayerPrefs.GetFloat(SFX_KEY,    0.75f);
 
-        // Daftarkan listener baru
         masterSlider.onValueChanged.AddListener(SetMasterVolume);
         musicSlider.onValueChanged.AddListener(SetMusicVolume);
         sfxSlider.onValueChanged.AddListener(SetSFXVolume);
@@ -106,8 +102,6 @@ public class AudioManager : MonoBehaviour
     float LinearToDecibel(float linear)
     {
         if (linear <= 0.0001f) return -80f;
-
-        // Geser seluruh kurva ke atas sebesar maxBoostDb
         return Mathf.Log10(linear) * 20f + maxBoostDb;
     }
 }

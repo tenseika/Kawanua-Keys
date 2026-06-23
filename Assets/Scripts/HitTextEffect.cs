@@ -25,10 +25,8 @@ public class HitTextEffect : MonoBehaviour
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / duration);
 
-            // Move upward
             transform.position = Vector3.Lerp(startPos, endPos, EaseOut(t));
 
-            // Stay fully visible for first 30% then fade out
             float alpha = t < 0.3f ? 1f : Mathf.Lerp(1f, 0f, (t - 0.3f) / 0.7f);
             SetAlpha(alpha);
 

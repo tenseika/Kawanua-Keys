@@ -35,9 +35,10 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool isCountingDown;
     public GameObject pauseScreen;
     public TMP_Text countdownText;
-    public GameObject pauseButton; // drag tombol pause ke sini
-
+    public GameObject pauseButton;
     public GameObject resultsScreen;
+    public GameObject gameOverScreen;
+    public TMP_Text gameOverScoreText;
     public TMP_Text percentHitText, rankText, finalScoreText;
 
     [Header("Health Bar")]
@@ -45,15 +46,13 @@ public class GameManager : MonoBehaviour
     public float currentHP  = 70f;
 
     // Nilai-nilai ini akan di-override oleh SongHPConfig jika diisi
-    public float hpPerPerfect = 3f;
-    public float hpPerGood    = 1f;
-    public float hpPerNormal  = -3f;
-    public float hpPerMiss    = -10f;
+    [HideInInspector]public float hpPerPerfect = 3f;
+    [HideInInspector]public float hpPerGood    = 1f;
+    [HideInInspector]public float hpPerNormal  = -3f;
+    [HideInInspector]public float hpPerMiss    = -10f;
 
     public TMP_Text hpText;
     public Image heartImage;
-    public GameObject gameOverScreen;
-    public TMP_Text gameOverScoreText;
 
     [Header("Game Over SFX")]
     public AudioClip gameOverSFX;
@@ -89,16 +88,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
-
-        // Terapkan config HP dari ScriptableObject jika ada
         ApplyHPConfig();
-
         scoreText.text = "Skor: 0";
         currentMultiplier = 1;
-
         UpdateHPDisplay();
-
-        if (pauseButton != null) pauseButton.SetActive(false); // sembunyikan dulu
+        if (pauseButton != null) pauseButton.SetActive(false);
     }
 
     // Membaca nilai dari SongHPConfig dan menimpa field lokal
@@ -345,10 +339,10 @@ public class GameManager : MonoBehaviour
     // ── Cek apakah semua input lane harus diblokir ───────────
     public bool IsInputBlocked()
     {
-        if (isCountingDown) return true;        // countdown resume sedang berjalan
-        if (isPaused) return true;              // pause screen sedang muncul
-        if (isGameOver) return true;            // game over screen sedang muncul
-        if (resultsScreen != null && resultsScreen.activeInHierarchy) return true; // results screen muncul
+        if (isCountingDown) return true;
+        if (isPaused) return true;
+        if (isGameOver) return true;
+        if (resultsScreen != null && resultsScreen.activeInHierarchy) return true;
 
         return false;
     }

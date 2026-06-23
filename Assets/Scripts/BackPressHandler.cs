@@ -63,7 +63,6 @@ public class BackPressHandler : MonoBehaviour
     void ShowToast(string message)
     {
 #if UNITY_ANDROID && !UNITY_EDITOR
-        // Semua panggilan UI Android harus berjalan di main thread Android.
         AndroidJavaClass  unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
         AndroidJavaObject activity    = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
 
@@ -73,7 +72,6 @@ public class BackPressHandler : MonoBehaviour
             AndroidJavaObject context     = activity.Call<AndroidJavaObject>("getApplicationContext");
             AndroidJavaObject javaMessage = new AndroidJavaObject("java.lang.String", message);
 
-            // Toast.LENGTH_SHORT = 0, Toast.LENGTH_LONG = 1
             AndroidJavaObject toast = toastClass.CallStatic<AndroidJavaObject>(
                 "makeText", context, javaMessage, 0
             );

@@ -11851,6 +11851,8 @@ MonoBehaviour:
   countdownText: {fileID: 668810069}
   pauseButton: {fileID: 985623422}
   resultsScreen: {fileID: 1456701837}
+  gameOverScreen: {fileID: 2018520261}
+  gameOverScoreText: {fileID: 759301757}
   percentHitText: {fileID: 1969130198}
   rankText: {fileID: 579617938}
   finalScoreText: {fileID: 1800579260}
@@ -11862,8 +11864,6 @@ MonoBehaviour:
   hpPerMiss: -10
   hpText: {fileID: 1053010830}
   heartImage: {fileID: 1380792901}
-  gameOverScreen: {fileID: 2018520261}
-  gameOverScoreText: {fileID: 759301757}
   gameOverSFX: {fileID: 8300000, guid: 60d2964badc25b04c9f8926504d23cce, type: 3}
   sfxSource: {fileID: 959821457}
   resultSFX: {fileID: 8300000, guid: 468dda676bed56f4da6a8654934ae166, type: 3}
@@ -17247,7 +17247,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: EsaMokan
+          m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1421960080
