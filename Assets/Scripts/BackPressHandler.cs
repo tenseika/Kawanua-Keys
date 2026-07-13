@@ -62,7 +62,7 @@ public class BackPressHandler : MonoBehaviour
 
     void ShowToast(string message)
     {
-#if UNITY_ANDROID && !UNITY_EDITOR
+    #if UNITY_ANDROID && !UNITY_EDITOR
         AndroidJavaClass  unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
         AndroidJavaObject activity    = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
 
@@ -77,9 +77,9 @@ public class BackPressHandler : MonoBehaviour
             );
             toast.Call("show");
         }));
-#else
-        // Fallback di Editor: cetak ke Console
-        Debug.Log($"[BackPressHandler] Toast: {message}");
-#endif
+    #else
+            // Fallback di Editor: cetak ke Console
+            Debug.Log($"[BackPressHandler] Toast: {message}");
+    #endif
     }
 }

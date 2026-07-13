@@ -104,10 +104,6 @@ public class GameManager : MonoBehaviour
         hpPerGood    = hpConfig.hpPerGood;
         hpPerNormal  = hpConfig.hpPerNormal;
         hpPerMiss    = hpConfig.hpPerMiss;
-
-        Debug.Log($"[HP Config] Loaded '{hpConfig.name}' — " +
-                  $"Perfect:{hpPerPerfect} Good:{hpPerGood} " +
-                  $"Normal:{hpPerNormal} Miss:{hpPerMiss}");
     }
 
     void Update()
@@ -266,7 +262,7 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
-        if (isCountingDown) return; // cegah pause saat countdown berjalan
+        if (isCountingDown) return; 
         
         isPaused = true;
         theMusic.Pause();
