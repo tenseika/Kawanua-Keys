@@ -7666,7 +7666,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: GadisTaruna
+          m_StringArgument: Tahanusangkara
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &597269443
@@ -10185,7 +10185,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: GadisTaruna
+          m_StringArgument: Tahanusangkara
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &805244749
@@ -11874,7 +11874,7 @@ MonoBehaviour:
   hpColorLow: {r: 0.54509807, g: 0, b: 0, a: 1}
   isGameOver: 0
   songID: Tahanusangkara
-  hpConfig: {fileID: 11400000, guid: 1ef775cd0dfb990478639f3d5829f131, type: 2}
+  hpConfig: {fileID: 11400000, guid: 4db1e88e49042824d9fd1389b19c7ab5, type: 2}
 --- !u!82 &959821457
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13489,7 +13489,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: GadisTaruna
+          m_StringArgument: Tahanusangkara
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1038773575

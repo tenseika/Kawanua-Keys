@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Games/SiPatokaan.unity
     guid: a9e0870464b47994ca12e7a11a6d79f5
+  - enabled: 1
+    path: Assets/Scenes/Games/Tahanusangkara.unity
+    guid: 2355164ccbef2ca479c820a5859b998e
   m_configObjects: {}
