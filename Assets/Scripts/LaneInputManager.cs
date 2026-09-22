@@ -1,27 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-// ============================================================
-//  LaneInputManager
-// ============================================================
-//  Setup di Unity:
-//  1. Buat GameObject kosong bernama "LaneInputManager".
-//  2. Tambahkan script ini ke GameObject tersebut.
-//  3. Drag GameObject button tiap lane ke array "laneButtons"
-//     (urutan: lane 0 paling kiri → lane 3 paling kanan).
-//     Script otomatis hitung area sentuh dari:
-//       - SpriteRenderer  → pakai bounds sprite di layar
-//       - RectTransform   → pakai corners UI di layar
-//  4. Opsional: isi "touchPadding" untuk memperlebar area
-//     sentuh (pixel) agar lebih mudah ditekan.
-// ============================================================
  
 public class LaneInputManager : MonoBehaviour
 {
     public static LaneInputManager instance;
  
-    [Tooltip("Drag GameObject button setiap lane ke sini (urutan kiri → kanan).")]
+    [Tooltip("Drag GameObject button setiap lane ke sini (urutan kiri ke kanan).")]
     public GameObject[] laneButtons;
  
     [Tooltip("Pelebaran area sentuh ke semua sisi (pixel layar). 0 = pas ukuran sprite.")]
@@ -57,8 +42,7 @@ public class LaneInputManager : MonoBehaviour
         RebuildAreas();
     }
  
-    // ── Hitung area sentuh dari setiap button ────────────────
- 
+    // Hitung area sentuh dari setiap button 
     void RebuildAreas()
     {
         Camera cam = Camera.main;
@@ -76,24 +60,17 @@ public class LaneInputManager : MonoBehaviour
             r.height += touchPadding * 2f;
  
             _laneAreas[i] = r;
- 
-            Debug.Log($"[LaneInputManager] Lane {i} area = {r} (dari {laneButtons[i].name})");
         }
     }
  
-    /// <summary>
-    /// Hitung Rect layar (pixel) dari sebuah GameObject.
-    /// Mendukung SpriteRenderer (World Space) dan RectTransform (UI).
-    /// </summary>
     Rect GetScreenRect(GameObject go, Camera cam)
     {
-        // --- Coba RectTransform (UI Canvas) ---
+        // Coba RectTransform (UI Canvas)
         RectTransform rt = go.GetComponent<RectTransform>();
         if (rt != null)
         {
             Vector3[] corners = new Vector3[4];
             rt.GetWorldCorners(corners);
-            // corners: [0]=bottom-left, [1]=top-left, [2]=top-right, [3]=bottom-right
  
             // Jika Canvas pakai Screen Space Overlay, corners sudah dalam pixel layar
             // Jika Canvas pakai Camera/World Space, perlu konversi
@@ -112,27 +89,22 @@ public class LaneInputManager : MonoBehaviour
             return new Rect(minX, minY, maxX - minX, maxY - minY);
         }
  
-        // --- Coba SpriteRenderer (World Space) ---
         SpriteRenderer sr = go.GetComponent<SpriteRenderer>();
         if (sr != null)
         {
             Bounds bounds = sr.bounds;
  
-            // Konversi 4 sudut bounds world → screen
             Vector3 bl = cam.WorldToScreenPoint(new Vector3(bounds.min.x, bounds.min.y, bounds.center.z));
             Vector3 tr = cam.WorldToScreenPoint(new Vector3(bounds.max.x, bounds.max.y, bounds.center.z));
  
             return new Rect(bl.x, bl.y, tr.x - bl.x, tr.y - bl.y);
         }
  
-        // --- Fallback: pakai posisi world saja (ukuran 100×100 px) ---
         Vector3 screenPos = cam.WorldToScreenPoint(go.transform.position);
         Debug.LogWarning($"[LaneInputManager] {go.name} tidak punya SpriteRenderer/RectTransform. " +
                          "Menggunakan area default 100×100 px.");
         return new Rect(screenPos.x - 50f, screenPos.y - 50f, 100f, 100f);
     }
- 
-    // ── Update ───────────────────────────────────────────────
  
     void Update()
     {
@@ -184,7 +156,6 @@ public class LaneInputManager : MonoBehaviour
             }
         }
  
-        // Bersihkan finger yang hilang tanpa event Ended/Canceled
         for (int i = 0; i < count; i++)
         {
             if (_touchId[i] != -1 && !activeTouchIds.Contains(_touchId[i]))
@@ -196,7 +167,6 @@ public class LaneInputManager : MonoBehaviour
         }
  
 #if UNITY_EDITOR
-        // Fallback keyboard di Editor: A S D F
         KeyCode[] editorKeys = { KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.F };
         for (int i = 0; i < count && i < editorKeys.Length; i++)
         {
@@ -205,8 +175,6 @@ public class LaneInputManager : MonoBehaviour
         }
 #endif
     }
- 
-    // ── Public API ───────────────────────────────────────────
  
     public bool GetLaneDown(int laneIndex)
     {
@@ -226,7 +194,6 @@ public class LaneInputManager : MonoBehaviour
         return _justUp[laneIndex];
     }
  
-    // ── Gizmos: visualisasi area sentuh di Scene View ────────
 #if UNITY_EDITOR
     void OnDrawGizmos()
     {
@@ -238,7 +205,6 @@ public class LaneInputManager : MonoBehaviour
  
         foreach (Rect r in _laneAreas)
         {
-            // Konversi dari screen space ke world space untuk Gizmos
             Vector3 bl = cam.ScreenToWorldPoint(new Vector3(r.xMin, r.yMin, cam.nearClipPlane + 0.1f));
             Vector3 br = cam.ScreenToWorldPoint(new Vector3(r.xMax, r.yMin, cam.nearClipPlane + 0.1f));
             Vector3 tl = cam.ScreenToWorldPoint(new Vector3(r.xMin, r.yMax, cam.nearClipPlane + 0.1f));

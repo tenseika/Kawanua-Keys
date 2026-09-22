@@ -2,17 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
-// ============================================================
-//  MultiplierEffect
-// ============================================================
-//  Setup di Unity:
-//  1. Tambahkan script ini ke GameObject yang sama dengan
-//     multiText (TMP_Text multiplier) di GameManager.
-//  2. Drag field "multiplierText" ke TMP_Text multiplier.
-//  3. Di GameManager Inspector, drag GameObject ini ke field
-//     "multiplierEffect".
-// ============================================================
  
 public class MultiplierEffect : MonoBehaviour
 {
@@ -35,7 +24,6 @@ public class MultiplierEffect : MonoBehaviour
     [Tooltip("Seberapa cepat getaran berosilasi.")]
     public float shakeFrequency = 40f;
  
-    // ── State internal ──────────────────────────────────────
     private Vector3        _originalLocalPos;
     private Coroutine      _activeRoutine;
  
@@ -57,14 +45,12 @@ public class MultiplierEffect : MonoBehaviour
         RestartRoutine(DoBlink());
     }
  
-    // Dipanggil dari GameManager saat multiplier turun/reset
+    // Dipanggil dari GameManager saat multiplier turun
     public void PlayShake()
     {
         if (multiplierText == null) return;
         RestartRoutine(DoShake());
     }
- 
-    // ── Coroutines ──────────────────────────────────────────
  
     IEnumerator DoBlink()
     {
@@ -88,7 +74,7 @@ public class MultiplierEffect : MonoBehaviour
         {
             elapsed += Time.unscaledDeltaTime;
             float progress  = elapsed / shakeDuration;
-            float envelope  = 1f - progress;               // makin lama makin redam
+            float envelope  = 1f - progress;
             float offsetX   = Mathf.Sin(elapsed * shakeFrequency) * shakeMagnitude * envelope;
  
             multiplierText.transform.localPosition = _originalLocalPos + new Vector3(offsetX, 0f, 0f);
@@ -97,8 +83,6 @@ public class MultiplierEffect : MonoBehaviour
  
         multiplierText.transform.localPosition = _originalLocalPos;
     }
- 
-    // ── Helper ──────────────────────────────────────────────
  
     void RestartRoutine(IEnumerator routine)
     {

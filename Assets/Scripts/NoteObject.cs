@@ -6,11 +6,9 @@ public class NoteObject : MonoBehaviour
 {
     public bool canBePressed;
 
-    // laneIndex diisi otomatis oleh NoteSpawner — tidak perlu diisi manual
+    // diisi otomatis oleh notespawner
     [HideInInspector] public int laneIndex;
 
-    // KeyCode dipertahankan agar NoteSpawner tidak perlu diubah,
-    // tapi tidak lagi dipakai untuk input di HP build.
     [HideInInspector] public KeyCode keyToPress;
 
     public GameObject hitEffect, goodEffect, perfectEffect;
@@ -29,7 +27,6 @@ public class NoteObject : MonoBehaviour
 
         if (!_logged)
         {
-            Debug.Log($"[Note] HitZone Y:{hitZone.position.y} BeatTime:{beatTime} ScrollSpeed:{scrollSpeed}");
             _logged = true;
         }
 
@@ -38,7 +35,6 @@ public class NoteObject : MonoBehaviour
             transform.position.x, 
             hitZone.position.y + timeUntilBeat * scrollSpeed, 0f);
 
-        // Gunakan LaneInputManager untuk touch; fallback ke KeyCode jika tidak ada
         bool pressed = (LaneInputManager.instance != null)
             ? LaneInputManager.instance.GetLaneDown(laneIndex)
             : Input.GetKeyDown(keyToPress);

@@ -77,10 +77,6 @@ public class AudioManager : MonoBehaviour
         sfxSlider.onValueChanged.AddListener(SetSFXVolume);
     }
 
-    // Slider kirim nilai 0.0 – 1.0, AudioMixer pakai desibel
-    // Rumus: dB = log10(linearValue) * 20
-    // Saat value = 0, kita set ke -80 dB (senyap) untuk menghindari log(0)
-
     public void SetMasterVolume(float value)
     {
         mainMixer.SetFloat("MasterVolume", LinearToDecibel(value));

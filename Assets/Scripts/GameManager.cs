@@ -75,10 +75,6 @@ public class GameManager : MonoBehaviour
     [Header("Song Record")]
     public string songID;
 
-    // -------------------------------------------------------------------------
-    // HP Config per lagu — drag asset SongHPConfig ke sini di Inspector
-    // Kosongkan jika ingin pakai nilai default di atas
-    // -------------------------------------------------------------------------
     [Header("HP Config (opsional)")]
     public SongHPConfig hpConfig;
 

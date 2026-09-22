@@ -8,8 +8,6 @@ public class ButtonController : MonoBehaviour
     public Sprite defaultImage;
     public Sprite pressedImage;
 
-    // Nomor lane yang diwakili tombol ini (0 = paling kiri)
-    // Harus sama dengan index di LaneInputManager.laneAreas
     public int laneIndex;
 
     void Start()

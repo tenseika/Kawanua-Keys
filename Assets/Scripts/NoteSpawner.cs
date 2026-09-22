@@ -33,7 +33,6 @@ public class NoteSpawner : MonoBehaviour
 
             float startY = beatTime * scrollSpeed;
             Vector3 spawnPos = new Vector3(lanes[randomLane].position.x, startY, 0f);
-            Debug.Log($"[Spawn] BeatTime:{beatTime} StartY:{startY} ScrollSpeed:{scrollSpeed}");
 
             GameObject newNote = Instantiate(notePrefabs[randomLane], spawnPos, Quaternion.identity);
 

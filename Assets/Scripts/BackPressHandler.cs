@@ -2,22 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// ============================================================
-//  BackPressHandler
-// ============================================================
-//  Menampilkan Toast Android native saat pemain menekan tombol
-//  Back, Home, atau Recent Apps di scene MainMenu.
-//  Tekan 2× dalam window waktu yang ditentukan untuk keluar.
-//
-//  Setup di Unity:
-//  1. Buat GameObject kosong bernama "BackPressHandler"
-//     di scene MainMenu.
-//  2. Tambahkan script ini ke GameObject tersebut.
-//  3. Atur "exitWindow" di Inspector (default: 2 detik).
-//  4. Atur "toastMessage" sesuai teks yang ingin ditampilkan.
-//  5. Build target harus Android.
-// ============================================================
-
 public class BackPressHandler : MonoBehaviour
 {
     [Tooltip("Pesan Toast yang ditampilkan saat pertama kali menekan back.")]
@@ -30,17 +14,12 @@ public class BackPressHandler : MonoBehaviour
 
     void Update()
     {
-        // Input.backButton mencakup tombol Back fisik/gesture Android.
-        // Untuk Home & Recent Apps, Android menanganinya di OS level —
-        // kita tidak bisa intercept keduanya dari Unity, tapi back button
-        // sudah mencakup mayoritas use-case "keluar dari app".
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             float now = Time.unscaledTime;
 
             if (now - _lastBackTime <= exitWindow)
             {
-                // Tekan kedua dalam window → keluar
                 Application.Quit();
 
 #if UNITY_EDITOR
@@ -49,7 +28,7 @@ public class BackPressHandler : MonoBehaviour
             }
             else
             {
-                // Tekan pertama → tampilkan toast dan catat waktu
+                // Tekan pertama
                 _lastBackTime = now;
                 ShowToast(toastMessage);
             }

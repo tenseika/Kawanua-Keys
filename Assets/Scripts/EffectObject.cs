@@ -1,9 +1,6 @@
 using System.Collections;
 using UnityEngine;
 
-// Attach this to each effect prefab root.
-// Each prefab should have child GameObjects for its visual parts (rings, lines, X, etc.)
-// All visuals need a SpriteRenderer component.
 
 public class EffectObject : MonoBehaviour
 {
@@ -11,14 +8,9 @@ public class EffectObject : MonoBehaviour
 
     public EffectType effectType;
 
-    // Assign child SpriteRenderers in the Inspector.
-    // Perfect : ring1, ring2, ring3, and 8 spark lines
-    // Good    : ring1, ring2
-    // Hit     : ring1, and 3-4 small dot/square sprites
-
-    public SpriteRenderer[] rings;     // circle outline sprites, scaled outward
-    public SpriteRenderer[] sparks;    // line sprites for Perfect burst arms
-    public SpriteRenderer[] dots;      // small squares/dots for Hit scatter
+    public SpriteRenderer[] rings;
+    public SpriteRenderer[] sparks;
+    public SpriteRenderer[] dots;
 
     [Header("Timing")]
     public float duration = 0.45f;
@@ -35,18 +27,13 @@ public class EffectObject : MonoBehaviour
         Destroy(gameObject, duration + 0.05f);
     }
 
-    // -------------------------------------------------------------------------
-    // PERFECT  — 3 rings expand + 8 sparks shoot outward, gold color
-    // -------------------------------------------------------------------------
     IEnumerator PlayPerfect()
     {
         float elapsed = 0f;
 
-        // Stagger the three rings
         float[] ringDelays    = { 0f,    0.06f, 0.12f };
         float[] ringMaxScales = { 2.2f,  1.8f,  1.4f  };
 
-        // Pre-cache initial states
         Vector3[] sparkStartPositions = new Vector3[sparks.Length];
         for (int i = 0; i < sparks.Length; i++)
             sparkStartPositions[i] = sparks[i].transform.localPosition;
@@ -56,7 +43,7 @@ public class EffectObject : MonoBehaviour
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / duration);
 
-            // Rings: scale up and fade out
+            // Rings: scale up + fade out
             for (int i = 0; i < rings.Length && i < ringDelays.Length; i++)
             {
                 float ringT = Mathf.Clamp01((elapsed - ringDelays[i]) / (duration - ringDelays[i]));
@@ -67,7 +54,7 @@ public class EffectObject : MonoBehaviour
                 SetAlpha(rings[i], alpha);
             }
 
-            // Sparks: fly outward and shrink
+            // Sparks: fly outward + shrink
             for (int i = 0; i < sparks.Length; i++)
             {
                 float sparkT = Mathf.Clamp01(elapsed / (duration * 0.75f));
@@ -84,9 +71,6 @@ public class EffectObject : MonoBehaviour
         }
     }
 
-    // -------------------------------------------------------------------------
-    // GOOD  — 2 rings expand with a slight scale bounce, teal color
-    // -------------------------------------------------------------------------
     IEnumerator PlayGood()
     {
         float elapsed = 0f;
@@ -111,14 +95,11 @@ public class EffectObject : MonoBehaviour
         }
     }
 
-    // -------------------------------------------------------------------------
-    // HIT  — 1 ring pops out fast, dots scatter and fade, blue color
-    // -------------------------------------------------------------------------
     IEnumerator PlayHit()
     {
         float elapsed = 0f;
 
-        // Give each dot a random outward direction
+        // random outward dot direction
         Vector2[] dotDirections = new Vector2[dots.Length];
         for (int i = 0; i < dots.Length; i++)
             dotDirections[i] = Random.insideUnitCircle.normalized;
@@ -137,7 +118,7 @@ public class EffectObject : MonoBehaviour
                 SetAlpha(rings[0], alpha);
             }
 
-            // Dots: scatter outward
+            // Dots: outward
             for (int i = 0; i < dots.Length; i++)
             {
                 float dist  = Mathf.Lerp(0f, 0.8f, EaseOut(t));
@@ -151,9 +132,6 @@ public class EffectObject : MonoBehaviour
         }
     }
 
-    // -------------------------------------------------------------------------
-    // Helpers
-    // -------------------------------------------------------------------------
     void SetAlpha(SpriteRenderer sr, float a)
     {
         if (sr == null) return;

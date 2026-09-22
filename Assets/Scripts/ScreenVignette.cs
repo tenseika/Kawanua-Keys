@@ -2,22 +2,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
-// ============================================================
-//  ScreenVignette — Post Processing Edition
-// ============================================================
-//  Setup di Unity:
-//  1. Install Post Processing via Package Manager.
-//  2. Main Camera: tambahkan Post Process Layer, atur Layer
-//     ke layer khusus (misal "PostProcessing").
-//  3. Buat GameObject "PP Volume", set Layer yang sama,
-//     centang Is Global, tambahkan Post Process Volume.
-//  4. Buat Profile baru di Volume, tambahkan effect Vignette.
-//  5. Di Vignette, centang Intensity dan Color agar scriptable.
-//  6. Tambahkan script ini ke GameObject mana saja (misal
-//     GameManager atau PP Volume itu sendiri).
-//  7. Drag Post Process Volume ke field "volume" di Inspector.
-// ============================================================
-
 public class ScreenVignette : MonoBehaviour
 {
     public static ScreenVignette instance;
@@ -39,7 +23,6 @@ public class ScreenVignette : MonoBehaviour
     [Header("Transisi")]
     public float smoothSpeed = 3.5f;
 
-    // ── State internal ──────────────────────────────────────
     private Vignette _vignette;
     private float    _currentIntensity;
     private Color    _currentColor;
@@ -68,9 +51,6 @@ public class ScreenVignette : MonoBehaviour
         float ratio           = GetHPRatio();
         float targetIntensity = GetTargetIntensity(ratio);
         Color targetColor     = GetTargetColor(ratio);
-
-        /*_currentIntensity = Mathf.Lerp(_currentIntensity, targetIntensity, Time.deltaTime * smoothSpeed);
-        _currentColor     = Color.Lerp(_currentColor,     targetColor,     Time.deltaTime * smoothSpeed);*/
 
         _currentIntensity = Mathf.Lerp(_currentIntensity, 
                                         targetIntensity, 
